@@ -5,10 +5,10 @@ const { User } = require("../models");
 const usersData = [
 
   {
-    fullName: "Testing Admin",
-    email: "admin@gmail.com",
+    fullName: "Hayat Hossain",
+    email: "rabbihossain872006@gmail.com",
     phoneNumber: "01735566789",
-    password: "$2a$08$cUQ3uMdbQjlyDF/dgn5mNuEt9fLJZqq8TaT9aKabrFuG5wND3/mPO",
+    password: "$2a$08$o6pMDVumynjFl5rn1CTUFervohxQDvogCVU6b17mNGOJGrnVv//AG",
     role: "admin",
     isEmailVerified: true,
   }

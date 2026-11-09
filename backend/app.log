@@ -737,3 +737,89 @@
     at Function.handle (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:175:3)
     at router (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:47:12)
 [[31merror[39m] POST /api/v1/%20customer/create 404 - 2.996 ms - message: This API Not found
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at router.handle (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:47:12)
+[[31merror[39m] POST /api/v1/customer/create 404 - 33.753 ms - message: This API Not found
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: You are not authorized
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:12:9
+    at allFailed (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:110:18)
+    at attempt (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:183:28)
+    at strategy.fail (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:305:9)
+    at JwtStrategy.authenticate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:96:21)
+    at attempt (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:369:16)
+    at authenticate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:370:7)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:51:8
+    at new Promise (<anonymous>)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:46:12
+[[31merror[39m] POST /api/v1/customer/create 401 - 45.988 ms - message: You are not authorized
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+[[31merror[39m] POST /api/v1/auth/register 404 - 17.548 ms - message: This API Not found
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: password must contain at least 1 letter and 1 number
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/validate.js:15:17
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at router.handle (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:47:12)
+[[31merror[39m] POST /api/v1/auth/register 400 - 41.748 ms - message: password must contain at least 1 letter and 1 number
+[[32minfo[39m] POST /api/v1/auth/register 201 - 381.453 ms
+[[32minfo[39m] POST /api/v1/auth/register 201 - 4118.016 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] POST /api/v1/auth/register 201 - 414.228 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
