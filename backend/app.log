@@ -1,0 +1,739 @@
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:280:10)
+    at middleware (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express-status-monitor/src/middleware-wrapper.js:63:7)
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:286:9
+[[31merror[39m] GET / 404 - 143.048 ms - message: This API Not found
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:280:10)
+    at middleware (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express-status-monitor/src/middleware-wrapper.js:63:7)
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:286:9
+[[31merror[39m] GET /docs 404 - 23.644 ms - message: This API Not found
+[[32minfo[39m] GET /api/v1/docs 301 - 4.086 ms
+[[32minfo[39m] GET /api/v1/docs/ 200 - 8.057 ms
+[[32minfo[39m] GET /api/v1/docs/ 304 - 3.258 ms
+[[32minfo[39m] POST /api/v1/auth/register 201 - 383.944 ms
+[[32minfo[39m] POST /api/v1/auth/register 201 - 243.293 ms
+[[32minfo[39m] GET /api/v1/docs/ 304 - 36.625 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: password must contain at least 1 letter and 1 number
+    at /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/middlewares/validate.js:15:17
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/layer.js:95:5)
+    at /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/lib/router/index.js:47:12)
+[[31merror[39m] POST /api/v1/auth/register 400 - 52.363 ms - message: password must contain at least 1 letter and 1 number
+[[32minfo[39m] POST /api/v1/auth/register 201 - 353.765 ms
+[[31merror[39m] Error: User does not exist
+    at Object.verifyEmail (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/services/auth.service.js:103:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/controllers/auth.controller.js:176:16
+[[31merror[39m] POST /api/v1/auth/verify-email 404 - 57.653 ms - message: User does not exist
+[[32minfo[39m] POST /api/v1/auth/verify-email 200 - 206.095 ms
+[[31merror[39m] SyntaxError: Expected double-quoted property name in JSON at position 80
+    at JSON.parse (<anonymous>)
+    at parse (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/node_modules/body-parser/lib/types/json.js:89:19)
+    at /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at invokeCallback (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/node_modules/raw-body/index.js:231:16)
+    at done (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/node_modules/express/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:524:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[[31merror[39m] POST /api/v1/auth/login 400 - 6.418 ms - message: Expected double-quoted property name in JSON at position 80
+[[31merror[39m] Error: No users found with this email
+    at /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/controllers/auth.controller.js:67:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[[31merror[39m] POST /api/v1/auth/login 404 - 55.658 ms - message: No users found with this email
+[[32minfo[39m] POST /api/v1/auth/login 200 - 394.581 ms
+[[32minfo[39m] POST /api/v1/auth/forgot-password 200 - 4946.535 ms
+[[31merror[39m] Error: Please verify your email first
+    at Object.resetPassword (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/services/auth.service.js:58:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/controllers/auth.controller.js:146:3
+[[31merror[39m] POST /api/v1/auth/reset-password 400 - 75.717 ms - message: Please verify your email first
+[[31merror[39m] Error: Invalid OTP
+    at Object.verifyEmail (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/services/auth.service.js:107:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/controllers/auth.controller.js:176:16
+[[31merror[39m] POST /api/v1/auth/verify-email 400 - 58.912 ms - message: Invalid OTP
+[[32minfo[39m] POST /api/v1/auth/verify-email 200 - 342.303 ms
+[[32minfo[39m] POST /api/v1/auth/reset-password 200 - 322.294 ms
+[[31merror[39m] Error: Incorrect password
+    at Object.changePassword (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/services/auth.service.js:77:11)
+    at async /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/controllers/auth.controller.js:158:3
+[[31merror[39m] POST /api/v1/auth/change-password 400 - 273.832 ms - message: Incorrect password
+[[32minfo[39m] POST /api/v1/auth/change-password 200 - 568.019 ms
+[[31merror[39m] Error: Not found
+    at Object.logout (/home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/services/auth.service.js:27:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/rabbi/_Dev_Folder/Betiopia_class/initial-backend-setup-template-mvp-architecture/src/controllers/auth.controller.js:95:3
+[[31merror[39m] POST /api/v1/auth/logout 404 - 62.964 ms - message: Not found
+[[32minfo[39m] POST /api/v1/auth/logout 200 - 350.366 ms
+[[31merror[39m] MongoServerError: bad auth : authentication failed
+    at Connection.onMessage (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:519:28)
+    at processIncomingData (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:519:28)
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] POST /api/v1/auth/register 201 - 329.037 ms
+[[31merror[39m] Error: Email not verified
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\src\controllers\auth.controller.js:64:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[[31merror[39m] POST /api/v1/auth/login 400 - 77.321 ms - message: Email not verified
+[[32minfo[39m] POST /api/v1/auth/verify-email 200 - 262.018 ms
+[[32minfo[39m] POST /api/v1/auth/login 200 - 318.682 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: Email already taken
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\src\controllers\auth.controller.js:34:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[[31merror[39m] POST /api/v1/auth/register 400 - 154.003 ms - message: Email already taken
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] SyntaxError: Expected double-quoted property name in JSON at position 121 (line 7 column 1)
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at invokeCallback (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\node_modules\raw-body\index.js:231:16)
+    at done (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\node_modules\raw-body\index.js:220:7)
+    at IncomingMessage.onEnd (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\node_modules\raw-body\index.js:280:7)
+    at IncomingMessage.emit (node:events:519:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[[31merror[39m] POST /api/v1/customer/create 400 - 29.163 ms - message: Expected double-quoted property name in JSON at position 121 (line 7 column 1)
+[[31merror[39m] Error: This API Not found
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\src\app.js:74:8
+    at Layer.handle [as handle_request] (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:265:14)
+    at Function.handle (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:47:12)
+[[31merror[39m] POST /api/v1/customer/create 404 - 43.440 ms - message: This API Not found
+[[31merror[39m] Error: This API Not found
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\src\app.js:74:8
+    at Layer.handle [as handle_request] (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:265:14)
+    at Function.handle (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:47:12)
+[[31merror[39m] POST /api/v1/customer/create 404 - 1.785 ms - message: This API Not found
+[[31merror[39m] Error: This API Not found
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\src\app.js:74:8
+    at Layer.handle [as handle_request] (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:265:14)
+    at Function.handle (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:47:12)
+[[31merror[39m] POST /api/v1/%20customer/create 404 - 1.020 ms - message: This API Not found
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://172.16.100.29:3000
+[[31merror[39m] Error: This API Not found
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\src\app.js:74:8
+    at Layer.handle [as handle_request] (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:265:14)
+    at Function.handle (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:47:12)
+[[31merror[39m] POST /api/v1/%20customer/create 404 - 23.138 ms - message: This API Not found
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: This API Not found
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\src\app.js:74:8
+    at Layer.handle [as handle_request] (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:265:14)
+    at Function.handle (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:47:12)
+[[31merror[39m] POST /api/v1/%20customer/create 404 - 1.184 ms - message: This API Not found
+[[31merror[39m] Error: This API Not found
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\src\app.js:74:8
+    at Layer.handle [as handle_request] (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:265:14)
+    at Function.handle (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\student\Desktop\Temo\MVC_Architecture_setup_B\node_modules\express\lib\router\index.js:47:12)
+[[31merror[39m] POST /api/v1/%20customer/create 404 - 2.996 ms - message: This API Not found

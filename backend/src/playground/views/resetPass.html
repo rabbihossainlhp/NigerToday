@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<body style="margin:0; padding:0; background:#fff7ed; font-family:Arial, sans-serif;">
+  <div style="max-width:600px; margin:40px auto; padding:0 20px;">
+    <div style="background:#ffffff; border:1px solid #fed7aa; border-radius:18px; overflow:hidden;">
+      <div style="padding:26px 32px; border-bottom:1px solid #ffedd5;">
+        <span style="font-size:18px; font-weight:bold; color:#ea580c;">
+          NEXMO TAG
+        </span>
+        <span style="float:right; color:#fb923c; font-size:13px;">
+          Security notice
+        </span>
+      </div>
+
+      <div style="padding:38px 32px;">
+        <p style="margin:0 0 8px; color:#78716c; font-size:14px;">
+          Hello ${username || "there"},
+        </p>
+
+        <h1 style="margin:0 0 18px; color:#292524; font-size:27px;">
+          Password reset requested
+        </h1>
+
+        <p style="color:#78716c; line-height:1.7; font-size:15px;">
+          Someone requested a password reset for your account. Use this
+          one-time code to continue:
+        </p>
+
+        <div style="margin:28px 0; background:#292524; padding:24px; border-radius:12px; text-align:center;">
+          <span style="color:#fed7aa; font-size:32px; font-weight:bold; letter-spacing:9px;">
+            ${otp}
+          </span>
+        </div>
+
+        <p style="color:#ea580c; font-size:13px; font-weight:bold;">
+          Valid for 3 minutes only.
+        </p>
+
+        <div style="margin-top:30px; padding:16px; background:#fff7ed; border-left:4px solid #fb923c;">
+          <p style="margin:0; color:#78716c; font-size:13px; line-height:1.6;">
+            Did not request this? Your password will remain unchanged.
+            Please ignore this message.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; color:#a8a29e; font-size:12px;">
+      © ${new Date().getFullYear()} NEXMO TAG
+    </p>
+  </div>
+</body>
+</html>
