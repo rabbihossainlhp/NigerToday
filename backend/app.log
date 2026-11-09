@@ -823,3 +823,176 @@
 [[32minfo[39m] Connected to MongoDB
 [[32minfo[39m] Listening to ip http://192.168.0.117:3000
 [[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+[[31merror[39m] POST /api/v1/auth/register 404 - 66.110 ms - message: This API Not found
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+[[31merror[39m] POST /api/v1/auth/register 404 - 4.915 ms - message: This API Not found
+[[31merror[39m] Error: You are not authorized
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:12:9
+    at allFailed (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:110:18)
+    at attempt (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:183:28)
+    at strategy.fail (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:305:9)
+    at JwtStrategy.authenticate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:96:21)
+    at attempt (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:369:16)
+    at authenticate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:370:7)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:51:8
+    at new Promise (<anonymous>)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:46:12
+[[31merror[39m] POST /api/v1/customer/create 401 - 4.922 ms - message: You are not authorized
+[[31merror[39m] SyntaxError: Unexpected token 'C', "#" is not valid JSON
+    at JSON.parse (<anonymous>)
+    at createStrictSyntaxError (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/types/json.js:160:10)
+    at parse (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:231:16)
+    at done (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:514:20)
+    at endReadableNT (node:internal/streams/readable:2147:12)
+[[31merror[39m] POST /api/v1/auth/login 400 - 3.133 ms - message: Unexpected token 'C', "#" is not valid JSON
+[[31merror[39m] SyntaxError: Unexpected token 'C', "#" is not valid JSON
+    at JSON.parse (<anonymous>)
+    at createStrictSyntaxError (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/types/json.js:160:10)
+    at parse (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:231:16)
+    at done (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:514:20)
+    at endReadableNT (node:internal/streams/readable:2147:12)
+[[31merror[39m] POST /api/v1/auth/login 400 - 1.879 ms - message: Unexpected token 'C', "#" is not valid JSON
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] SyntaxError: Unexpected token '_', "#" is not valid JSON
+    at JSON.parse (<anonymous>)
+    at createStrictSyntaxError (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/types/json.js:160:10)
+    at parse (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:231:16)
+    at done (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:514:20)
+    at endReadableNT (node:internal/streams/readable:2147:12)
+[[31merror[39m] POST /api/v1/auth/register 400 - 40.618 ms - message: Unexpected token '_', "#" is not valid JSON
+[[31merror[39m] Error: Email already taken
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/auth.controller.js:34:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/auth/register 400 - 220.202 ms - message: Email already taken
+[[32minfo[39m] POST /api/v1/auth/register 201 - 373.937 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] SyntaxError: Unexpected token 'C', "#" is not valid JSON
+    at JSON.parse (<anonymous>)
+    at createStrictSyntaxError (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/types/json.js:160:10)
+    at parse (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:231:16)
+    at done (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:514:20)
+    at endReadableNT (node:internal/streams/readable:2147:12)
+[[31merror[39m] POST /api/v1/auth/login 400 - 24.724 ms - message: Unexpected token 'C', "#" is not valid JSON
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] SyntaxError: Unexpected token 'C', "#" is not valid JSON
+    at JSON.parse (<anonymous>)
+    at createStrictSyntaxError (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/types/json.js:160:10)
+    at parse (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:231:16)
+    at done (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:514:20)
+    at endReadableNT (node:internal/streams/readable:2147:12)
+[[31merror[39m] POST /api/v1/auth/login 400 - 24.044 ms - message: Unexpected token 'C', "#" is not valid JSON
+[[32minfo[39m] POST /api/v1/auth/login 200 - 600.906 ms
+[[31merror[39m] Error: Forbidden
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:36:23
+    at strategy.success (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:222:18)
+    at verified (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:115:41)
+    at JwtStrategy.jwtVerify [as _verify] (/home/rabbi/_Dev_Folder/NigerToday/backend/src/config/passport.js:20:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/customer/create 403 - 123.667 ms - message: Forbidden
+[[31merror[39m] Error: You are not authorized
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:12:9
+    at allFailed (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:110:18)
+    at attempt (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:183:28)
+    at strategy.fail (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:305:9)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:106:33
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/jsonwebtoken/verify.js:190:16
+    at getSecret (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/jsonwebtoken/verify.js:101:10)
+    at module.exports [as JwtVerifier] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/verify_jwt.js:4:16)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:104:25
+[[31merror[39m] POST /api/v1/customer/create 401 - 9.841 ms - message: You are not authorized
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] POST /api/v1/auth/login 200 - 685.724 ms
+[[32minfo[39m] POST /api/v1/auth/login 200 - 348.053 ms
+[[31merror[39m] Error: Forbidden
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:36:23
+    at strategy.success (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:222:18)
+    at verified (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:115:41)
+    at JwtStrategy.jwtVerify [as _verify] (/home/rabbi/_Dev_Folder/NigerToday/backend/src/config/passport.js:20:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/customer/create 403 - 53.275 ms - message: Forbidden
+[[31merror[39m] Error: You are not authorized
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:12:9
+    at allFailed (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:110:18)
+    at attempt (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:183:28)
+    at strategy.fail (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:305:9)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:106:33
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/jsonwebtoken/verify.js:190:16
+    at getSecret (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/jsonwebtoken/verify.js:101:10)
+    at module.exports [as JwtVerifier] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/verify_jwt.js:4:16)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:104:25
+[[31merror[39m] POST /api/v1/customer/create 401 - 5.318 ms - message: You are not authorized
+[[31merror[39m] Error: Forbidden
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:36:23
+    at strategy.success (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:222:18)
+    at verified (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:115:41)
+    at JwtStrategy.jwtVerify [as _verify] (/home/rabbi/_Dev_Folder/NigerToday/backend/src/config/passport.js:20:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/customer/create 403 - 47.533 ms - message: Forbidden

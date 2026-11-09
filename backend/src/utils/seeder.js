@@ -6,9 +6,9 @@ const usersData = [
 
   {
     fullName: "Hayat Hossain",
-    email: "rabbihossain872006@gmail.com",
+    email: "rabbihossain872006+1@gmail.com",
     phoneNumber: "01735566789",
-    password: "$2a$08$o6pMDVumynjFl5rn1CTUFervohxQDvogCVU6b17mNGOJGrnVv//AG",
+    password: "$2a$08$58Hf6zz/8PDpTwBsOnf6H.gUB7gvsS1uJedkygC/WaROeOnnFdoX2",
     role: "admin",
     isEmailVerified: true,
   }
