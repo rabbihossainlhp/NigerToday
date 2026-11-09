@@ -996,3 +996,61 @@
     at JwtStrategy.jwtVerify [as _verify] (/home/rabbi/_Dev_Folder/NigerToday/backend/src/config/passport.js:20:5)
     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
 [[31merror[39m] POST /api/v1/customer/create 403 - 47.533 ms - message: Forbidden
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] POST /api/v1/auth/register 201 - 405.309 ms
+[[31merror[39m] Error: No users found with this email
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/auth.controller.js:67:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/auth/login 404 - 53.101 ms - message: No users found with this email
+[[31merror[39m] Error: Email not verified
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/auth.controller.js:64:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/auth/login 400 - 442.551 ms - message: Email not verified
+[[32minfo[39m] POST /api/v1/auth/login 200 - 485.179 ms
+[[31merror[39m] Error: Forbidden
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:36:23
+    at strategy.success (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:222:18)
+    at verified (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:115:41)
+    at JwtStrategy.jwtVerify [as _verify] (/home/rabbi/_Dev_Folder/NigerToday/backend/src/config/passport.js:20:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/customer/create 403 - 91.082 ms - message: Forbidden
+[[31merror[39m] Error: Forbidden
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:36:23
+    at strategy.success (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:222:18)
+    at verified (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:115:41)
+    at JwtStrategy.jwtVerify [as _verify] (/home/rabbi/_Dev_Folder/NigerToday/backend/src/config/passport.js:20:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/customer/create 403 - 54.628 ms - message: Forbidden
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: Customer email is required
+    at Object.createCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:8:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:8:42
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:144:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/customer/create 404 - 136.459 ms - message: Customer email is required
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: Customer email is required
+    at Object.createCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:8:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:8:42
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:144:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/customer/create 400 - 146.785 ms - message: Customer email is required
+[[32minfo[39m] POST /api/v1/customer/create 201 - 192.587 ms

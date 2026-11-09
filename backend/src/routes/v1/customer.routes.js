@@ -5,7 +5,7 @@ const {customerController} = require("../../controllers")
 
 const router = express.Router();
 
-router.route("/create").post(auth("'admin'"), customerController.createCustomer);
+router.route("/create").post(auth("admin"), customerController.createCustomer);
 
 
 module.exports = router;
