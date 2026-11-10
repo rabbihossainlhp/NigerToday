@@ -62,10 +62,24 @@ const findCustomer = async(filter) =>{
 
 
 
+const updateCustomer = async(customerId,customerBody)=>{
+   const updatedCustomer = await Customer.findByIdAndUpdate(customerId,customerBody,{
+      new:true,
+   });
+
+   if(!updatedCustomer){
+      throw new ApiError(httpStatus.BAD_REQUEST, "Customer update failed!!")
+   }
+
+   return updatedCustomer;
+}
+
+
 
 module.exports = {
    createCustomer,
    getCustomerList,
    findCustomer,
+   updateCustomer,
    
 };

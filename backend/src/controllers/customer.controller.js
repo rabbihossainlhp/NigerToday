@@ -18,7 +18,6 @@ const createCustomer = catchAsync(async (req, res) => {
     );
   }
 
-
   const customer = await customerService.createCustomer(req.body);
   res.status(httpStatus.CREATED).json(
     response({
@@ -95,8 +94,45 @@ const getSingleCustomer = catchAsync(async(req,res)=>{
 
 
 
+
+
+const updateCustomer = catchAsync(async(req,res)=>{
+  const {id} = req.params;
+  const customer = await customerService.findCustomer({_id:id});
+
+  console.log(customer)
+  if(!customer){
+    return res.status(httpStatus.NOT_FOUND).json(
+      response({
+        message: "Customer not found",
+        status: "OK",
+        statusCode: httpStatus.NOT_FOUND,
+      })
+    );
+  }
+
+
+  const updatedCustomer = await customerService.updateCustomer(id,req.body);
+
+  res.status(httpStatus.OK).json(
+      response({
+        message: "Customer updated!!!!!",
+        status: "OK",
+        statusCode: httpStatus.OK,
+        data:updatedCustomer
+      })
+    );
+
+})
+
+
+
+
+
+
 module.exports = {
   createCustomer,
   getCustomerList,
   getSingleCustomer,
+  updateCustomer,
 };
