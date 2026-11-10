@@ -10,7 +10,7 @@ router.route("/customers-list").get(auth("admin"), customerController.getCustome
 router.route("/:id")
     .get(auth("admin"), customerController.getSingleCustomer)
     .patch(auth("admin"), customerController.updateCustomer)
-
+    .delete(auth("admin"), customerController.deleteCustomer)
 
 
 

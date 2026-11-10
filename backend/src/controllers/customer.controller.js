@@ -8,7 +8,7 @@ const { Customer } = require("../models");
 const createCustomer = catchAsync(async (req, res) => {
   const getCustomer = await customerService.findCustomer(req.body.email);
 
-  if (getCustomer.length > 0) {
+  if (getCustomer) {
     return res.status(httpStatus.BAD_REQUEST).json(
       response({
         message: "Customer email already exists",
@@ -94,13 +94,10 @@ const getSingleCustomer = catchAsync(async(req,res)=>{
 
 
 
-
-
 const updateCustomer = catchAsync(async(req,res)=>{
   const {id} = req.params;
   const customer = await customerService.findCustomer({_id:id});
 
-  console.log(customer)
   if(!customer){
     return res.status(httpStatus.NOT_FOUND).json(
       response({
@@ -128,6 +125,31 @@ const updateCustomer = catchAsync(async(req,res)=>{
 
 
 
+const deleteCustomer = catchAsync(async(req,res)=>{
+  const {id} = req.params;
+  const customer = await customerService.findCustomer({_id:id});
+  if(!customer){
+    return res.status(httpStatus.NOT_FOUND).json(
+      response({
+        message: "Customer not found",
+        status: "OK",
+        statusCode: httpStatus.NOT_FOUND,
+      })
+    );
+  }
+
+
+  await customerService.deleteCustomer(id);
+
+  res.status(httpStatus.OK).json(
+      response({
+        message: "Customer deleted!!!!!",
+        status: "OK",
+        statusCode: httpStatus.OK,
+      })
+    );
+
+})
 
 
 module.exports = {
@@ -135,4 +157,5 @@ module.exports = {
   getCustomerList,
   getSingleCustomer,
   updateCustomer,
+  deleteCustomer
 };

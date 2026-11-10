@@ -1,6 +1,7 @@
 const httpStatus = require("http-status");
 const { Customer } = require("../models");
 const ApiError = require("../utils/ApiError");
+const mongoose = require("mongoose");
 
 
 
@@ -50,11 +51,19 @@ const getCustomerList = async(query) =>{
 
 
 
-const findCustomer = async(filter) =>{
-   if(typeof filter === "string"){
-      return await Customer.find({email:filter})
+const findCustomer = async (filter) => {
+   if (typeof filter === "string") {
+
+      return await Customer.findOne({ email: filter })
    }
-   return await Customer.find(filter)
+
+   if (filter._id) {
+      if (!mongoose.Types.ObjectId.isValid(filter._id)) {
+         throw new ApiError(httpStatus.BAD_REQUEST, "Invalid customer ID format!");
+      }
+   }
+
+   return await Customer.findOne(filter)
 }
 
 
@@ -63,6 +72,12 @@ const findCustomer = async(filter) =>{
 
 
 const updateCustomer = async(customerId,customerBody)=>{
+
+   if (!mongoose.Types.ObjectId.isValid(customerId)) {
+      throw new ApiError(httpStatus.BAD_REQUEST, "Invalid customer ID format!");
+   }
+
+
    const updatedCustomer = await Customer.findByIdAndUpdate(customerId,customerBody,{
       new:true,
    });
@@ -76,10 +91,25 @@ const updateCustomer = async(customerId,customerBody)=>{
 
 
 
+
+
+const deleteCustomer = async (customerId) => {
+   if (!mongoose.Types.ObjectId.isValid(customerId)) {
+      throw new ApiError(httpStatus.BAD_REQUEST, "Invalid customer ID format!");
+   }
+
+   await Customer.findByIdAndDelete(customerId);
+
+   return null;
+}
+
+
+
 module.exports = {
    createCustomer,
    getCustomerList,
    findCustomer,
    updateCustomer,
+   deleteCustomer,
    
 };

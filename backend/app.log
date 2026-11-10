@@ -1721,3 +1721,245 @@
     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
     at async Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:57:11)
 [[31merror[39m] PATCH /api/v1/customer/6af2a68bc03d540d17b7329 400 - 100.867 ms - message: Cast to ObjectId failed for value \"6af2a68bc03d540d17b7329\" (type string) at path \"_id\" for model \"Customers\"
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 510.857 ms
+[[31merror[39m] CastError: Cast to ObjectId failed for value "6af1f4f88dcfd0555a712db" (type string) at path "_id" for model "Customers"
+    at ObjectId.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schema/objectid.js:251:11)
+    at SchemaType.applySetters (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1219:12)
+    at SchemaType.castForQuery (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1633:15)
+    at cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/cast.js:393:32)
+    at Query.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4935:12)
+    at Query._castConditions (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2249:10)
+    at model.Query._find (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2275:8)
+    at model.Query.exec (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4451:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:57:11)
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db 400 - 110.058 ms - message: Cast to ObjectId failed for value \"6af1f4f88dcfd0555a712db\" (type string) at path \"_id\" for model \"Customers\"
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] CastError: Cast to ObjectId failed for value "6af1f4f88dcfd0555a712db" (type string) at path "_id" for model "Customers"
+    at ObjectId.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schema/objectid.js:251:11)
+    at SchemaType.applySetters (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1219:12)
+    at SchemaType.castForQuery (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1633:15)
+    at cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/cast.js:393:32)
+    at Query.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4935:12)
+    at Query._castConditions (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2249:10)
+    at model.Query._find (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2275:8)
+    at model.Query.exec (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4451:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:57:11)
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db 400 - 142.215 ms - message: Cast to ObjectId failed for value \"6af1f4f88dcfd0555a712db\" (type string) at path \"_id\" for model \"Customers\"
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] CastError: Cast to ObjectId failed for value "6af1f4f88dcfd0555a712db" (type string) at path "_id" for model "Customers"
+    at ObjectId.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schema/objectid.js:251:11)
+    at SchemaType.applySetters (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1219:12)
+    at SchemaType.castForQuery (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1633:15)
+    at cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/cast.js:393:32)
+    at Query.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4935:12)
+    at Query._castConditions (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2249:10)
+    at model.Query._find (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2275:8)
+    at model.Query.exec (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4451:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:57:11)
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db 400 - 319.330 ms - message: Cast to ObjectId failed for value \"6af1f4f88dcfd0555a712db\" (type string) at path \"_id\" for model \"Customers\"
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] CastError: Cast to ObjectId failed for value "6af1f4f88dcfd0555a712db" (type string) at path "_id" for model "Customers"
+    at ObjectId.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schema/objectid.js:251:11)
+    at SchemaType.applySetters (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1219:12)
+    at SchemaType.castForQuery (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1633:15)
+    at cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/cast.js:393:32)
+    at Query.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4935:12)
+    at Query._castConditions (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2249:10)
+    at model.Query._find (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2275:8)
+    at model.Query.exec (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4451:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:58:11)
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db 400 - 124.339 ms - message: Cast to ObjectId failed for value \"6af1f4f88dcfd0555a712db\" (type string) at path \"_id\" for model \"Customers\"
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] CastError: Cast to ObjectId failed for value "6af1f4f88dcfd0555a712db" (type string) at path "_id" for model "Customers"
+    at ObjectId.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schema/objectid.js:251:11)
+    at SchemaType.applySetters (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1219:12)
+    at SchemaType.castForQuery (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1633:15)
+    at cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/cast.js:393:32)
+    at Query.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4935:12)
+    at Query._castConditions (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2249:10)
+    at model.Query._find (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2275:8)
+    at model.Query.exec (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4451:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:58:11)
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db 400 - 181.999 ms - message: Cast to ObjectId failed for value \"6af1f4f88dcfd0555a712db\" (type string) at path \"_id\" for model \"Customers\"
+[[31merror[39m] Error: Customer update failed!!
+    at Object.updateCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:78:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:115:27
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712dbf 400 - 215.795 ms - message: Customer update failed!!
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712dbf 404 - 865.440 ms - message: -
+[[31merror[39m] CastError: Cast to ObjectId failed for value "6af1f4f88dcfd0555a712db" (type string) at path "_id" for model "Customers"
+    at ObjectId.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schema/objectid.js:251:11)
+    at SchemaType.applySetters (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1219:12)
+    at SchemaType.castForQuery (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1633:15)
+    at cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/cast.js:393:32)
+    at Query.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4935:12)
+    at Query._castConditions (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2249:10)
+    at model.Query._findOne (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2545:8)
+    at model.Query.exec (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4451:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:58:11)
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db 400 - 53.515 ms - message: Cast to ObjectId failed for value \"6af1f4f88dcfd0555a712db\" (type string) at path \"_id\" for model \"Customers\"
+[[32minfo[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 167.076 ms
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db4 404 - 110.544 ms - message: -
+[[32minfo[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712dbC 200 - 143.584 ms
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712dbd 404 - 146.194 ms - message: -
+[[32minfo[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 148.118 ms
+[[32minfo[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712dbC 200 - 148.682 ms
+[[32minfo[39m] POST /api/v1/customer/create 201 - 155.423 ms
+[[32minfo[39m] POST /api/v1/customer/create 201 - 156.970 ms
+[[32minfo[39m] POST /api/v1/customer/create 201 - 221.302 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] CastError: Cast to ObjectId failed for value "6af1f4f88dcfd0555a712db" (type string) at path "_id" for model "Customers"
+    at ObjectId.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schema/objectid.js:251:11)
+    at SchemaType.applySetters (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1219:12)
+    at SchemaType.castForQuery (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1633:15)
+    at cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/cast.js:393:32)
+    at Query.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4935:12)
+    at Query._castConditions (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2249:10)
+    at model.Query._findOne (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2545:8)
+    at model.Query.exec (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4451:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:59:11)
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db 400 - 95.613 ms - message: Cast to ObjectId failed for value \"6af1f4f88dcfd0555a712db\" (type string) at path \"_id\" for model \"Customers\"
+[[31merror[39m] CastError: Cast to ObjectId failed for value "6af1f4f88dcfd0555a712db" (type string) at path "_id" for model "Customers"
+    at ObjectId.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schema/objectid.js:251:11)
+    at SchemaType.applySetters (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1219:12)
+    at SchemaType.castForQuery (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1633:15)
+    at cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/cast.js:393:32)
+    at Query.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4935:12)
+    at Query._castConditions (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2249:10)
+    at model.Query._findOne (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2545:8)
+    at model.Query.exec (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4451:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:59:11)
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db 400 - 50.856 ms - message: Cast to ObjectId failed for value \"6af1f4f88dcfd0555a712db\" (type string) at path \"_id\" for model \"Customers\"
+[[32minfo[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 255.077 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] POST /api/v1/customer/create 400 - 148.258 ms - message: -
+[[32minfo[39m] POST /api/v1/customer/create 201 - 155.762 ms
+[[31merror[39m] POST /api/v1/customer/create 400 - 105.882 ms - message: -
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 234.169 ms
+[[31merror[39m] Error: Invalid customer ID format!
+    at Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:62:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:101:42
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db 400 - 57.529 ms - message: Invalid customer ID format!
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[31merror[39m] CastError: Cast to ObjectId failed for value "6af1f4f88dcfd0555a712db" (type string) at path "_id" for model "Customers"
+    at ObjectId.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schema/objectid.js:251:11)
+    at SchemaType.applySetters (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1219:12)
+    at SchemaType.castForQuery (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1633:15)
+    at cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/cast.js:393:32)
+    at Query.cast (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4935:12)
+    at Query._castConditions (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2249:10)
+    at model.Query._findOne (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2545:8)
+    at model.Query.exec (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:4451:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:67:11)
+[[31merror[39m] PATCH /api/v1/customer/6af1f4f88dcfd0555a712db 400 - 95.138 ms - message: Cast to ObjectId failed for value \"6af1f4f88dcfd0555a712db\" (type string) at path \"_id\" for model \"Customers\"
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] POST /api/v1/customer/create 400 - 204.596 ms - message: -
+[[32minfo[39m] POST /api/v1/customer/create 201 - 337.027 ms
+[[31merror[39m] POST /api/v1/customer/create 400 - 177.252 ms - message: -
+[[31merror[39m] ValidationError: Customers validation failed: fullName: Path `fullName` (`Temporary`) is shorter than the minimum allowed length (10).
+    at Document.invalidate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/document.js:3238:32)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/document.js:3031:17
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+[[31merror[39m] POST /api/v1/customer/create 400 - 123.349 ms - message: Customers validation failed: fullName: Path `fullName` (`Temporary`) is shorter than the minimum allowed length (10).
+[[31merror[39m] ValidationError: Customers validation failed: fullName: Path `fullName` (`Temporary`) is shorter than the minimum allowed length (10).
+    at Document.invalidate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/document.js:3238:32)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/document.js:3031:17
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+[[31merror[39m] POST /api/v1/customer/create 400 - 100.061 ms - message: Customers validation failed: fullName: Path `fullName` (`Temporary`) is shorter than the minimum allowed length (10).
+[[31merror[39m] ValidationError: Customers validation failed: fullName: Path `fullName` (`temporary`) is shorter than the minimum allowed length (10).
+    at Document.invalidate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/document.js:3238:32)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/document.js:3031:17
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+[[31merror[39m] POST /api/v1/customer/create 400 - 109.485 ms - message: Customers validation failed: fullName: Path `fullName` (`temporary`) is shorter than the minimum allowed length (10).
+[[32minfo[39m] POST /api/v1/customer/create 201 - 162.853 ms
+[[32minfo[39m] PATCH /api/v1/customer/6af2f817a7fdd69f0e219ba2 200 - 174.778 ms
+[[32minfo[39m] DELETE /api/v1/customer/6af2f817a7fdd69f0e219ba2 200 - 153.012 ms
