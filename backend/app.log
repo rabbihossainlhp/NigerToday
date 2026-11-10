@@ -1416,3 +1416,145 @@
 [[31merror[39m] POST /api/v1/customer/create 400 - 181.204 ms - message: -
 [[31merror[39m] POST /api/v1/customer/create 400 - 132.083 ms - message: -
 [[31merror[39m] POST /api/v1/customer/create 400 - 138.825 ms - message: -
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] POST /api/v1/customer/create 400 - 217.063 ms - message: -
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1 200 - 337.611 ms
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+[[31merror[39m] GET /api/v1/customer/6af1f4f88dcfd0555a712dbc 404 - 4.732 ms - message: This API Not found
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: Forbidden
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:36:23
+    at strategy.success (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:222:18)
+    at verified (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:115:41)
+    at JwtStrategy.jwtVerify [as _verify] (/home/rabbi/_Dev_Folder/NigerToday/backend/src/config/passport.js:20:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/customer/6af1f4f88dcfd0555a712dbc 403 - 153.744 ms - message: Forbidden
+[[32minfo[39m] POST /api/v1/auth/login 200 - 504.266 ms
+[[31merror[39m] Error: Forbidden
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:36:23
+    at strategy.success (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:222:18)
+    at verified (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:115:41)
+    at JwtStrategy.jwtVerify [as _verify] (/home/rabbi/_Dev_Folder/NigerToday/backend/src/config/passport.js:20:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/customer/6af1f4f88dcfd0555a712dbc 403 - 44.268 ms - message: Forbidden
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 142.395 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 132.249 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 165.997 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 178.407 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 161.995 ms
+[[31merror[39m] ObjectParameterError: Parameter "filter" to find() must be an object, got "rabbih@gmail.com" (type string)
+    at Query.find (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/query.js:2348:16)
+    at model.find (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/model.js:2112:13)
+    at Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:54:26)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:9:45
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:144:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] POST /api/v1/customer/create 400 - 74.884 ms - message: Parameter "filter" to find() must be an object, got "rabbih@gmail.com" (type string)
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] POST /api/v1/customer/create 400 - 199.439 ms - message: -
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] POST /api/v1/customer/create 400 - 171.951 ms - message: -
+[[31merror[39m] POST /api/v1/customer/create 400 - 342.866 ms - message: -
+[[31merror[39m] POST /api/v1/customer/create 400 - 99.849 ms - message: -
+[[31merror[39m] POST /api/v1/customer/create 400 - 103.038 ms - message: -
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] POST /api/v1/customer/create 400 - 148.848 ms - message: -
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] POST /api/v1/customer/create 201 - 184.409 ms
+[[31merror[39m] POST /api/v1/customer/create 400 - 86.601 ms - message: -
+[[32minfo[39m] POST /api/v1/customer/create 201 - 163.353 ms
+[[31merror[39m] POST /api/v1/customer/create 400 - 89.119 ms - message: -
+[[32minfo[39m] POST /api/v1/customer/create 201 - 147.814 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1 200 - 218.292 ms

@@ -3,11 +3,12 @@ const ApiError = require("../utils/ApiError");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
 const { customerService } = require("../services");
+const { Customer } = require("../models");
 
 const createCustomer = catchAsync(async (req, res) => {
   const getCustomer = await customerService.findCustomer(req.body.email);
 
-  if (getCustomer) {
+  if (getCustomer.length > 0) {
     return res.status(httpStatus.BAD_REQUEST).json(
       response({
         message: "Customer email already exists",
@@ -34,11 +35,10 @@ const createCustomer = catchAsync(async (req, res) => {
 
 
 
-
 const getCustomerList = catchAsync(async (req, res) => {
   const customers = await customerService.getCustomerList(req.query);
 
-  if (customers.length === 0) {
+  if (!customers) {
     res.status(httpStatus.NOT_FOUND).json(
       response({
         message: "No customers found yet",
@@ -60,7 +60,43 @@ const getCustomerList = catchAsync(async (req, res) => {
 
 
 
+
+
+
+const getSingleCustomer = catchAsync(async(req,res)=>{
+  const {id} = req.params;
+  const customer = await customerService.findCustomer({_id:id});
+
+  console.log(customer)
+  if(!customer){
+    return res.status(httpStatus.NOT_FOUND).json(
+      response({
+        message: "Customer not found",
+        status: "OK",
+        statusCode: httpStatus.NOT_FOUND,
+      })
+    );
+  }
+
+
+  res.status(httpStatus.OK).json(
+      response({
+        message: "Customer data found",
+        status: "OK",
+        statusCode: httpStatus.OK,
+        data:customer
+      })
+    );
+
+})
+
+
+
+
+
+
 module.exports = {
   createCustomer,
   getCustomerList,
+  getSingleCustomer,
 };

@@ -50,8 +50,11 @@ const getCustomerList = async(query) =>{
 
 
 
-const findCustomer = async(email) =>{
-   return await Customer.find({email})
+const findCustomer = async(filter) =>{
+   if(typeof filter === "string"){
+      return await Customer.find({email:filter})
+   }
+   return await Customer.find(filter)
 }
 
 
