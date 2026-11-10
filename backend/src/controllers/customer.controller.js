@@ -93,7 +93,6 @@ const getSingleCustomer = catchAsync(async(req,res)=>{
 
 
 
-
 const updateCustomer = catchAsync(async(req,res)=>{
   const {id} = req.params;
   const customer = await customerService.findCustomer({_id:id});
@@ -152,10 +151,28 @@ const deleteCustomer = catchAsync(async(req,res)=>{
 })
 
 
+
+
+const getDashboardStats = catchAsync(async(req,res)=>{
+  const stats = await customerService.getDashboardStats();
+
+  res.status(httpStatus.OK).json(
+    response({
+      message: "Dashboard stats fetched successfully",
+      status: "OK",
+      statusCode: httpStatus.OK,
+      data: stats,
+    })
+  );
+})
+
+
+
 module.exports = {
   createCustomer,
   getCustomerList,
   getSingleCustomer,
   updateCustomer,
-  deleteCustomer
+  deleteCustomer,
+  getDashboardStats,
 };

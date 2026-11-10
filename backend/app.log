@@ -1963,3 +1963,59 @@
 [[32minfo[39m] POST /api/v1/customer/create 201 - 162.853 ms
 [[32minfo[39m] PATCH /api/v1/customer/6af2f817a7fdd69f0e219ba2 200 - 174.778 ms
 [[32minfo[39m] DELETE /api/v1/customer/6af2f817a7fdd69f0e219ba2 200 - 153.012 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: Invalid customer ID format!
+    at Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:62:16)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:67:42
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/customer/dashboard-stats 400 - 203.581 ms - message: Invalid customer ID format!
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[31merror[39m] ReferenceError: Poromis is not defined
+    at Object.getDashboardStats (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:116:43)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:157:39
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/customer/dashboard-stats 500 - 102.170 ms - message: Poromis is not defined
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] TypeError: Promise.all is not a constructor
+    at Object.getDashboardStats (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:116:43)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:157:39
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/customer/dashboard-stats 500 - 212.806 ms - message: Promise.all is not a constructor
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/dashboard-stats 200 - 790.317 ms
+[[32minfo[39m] GET /api/v1/customer/dashboard-stats 200 - 204.535 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] PATCH /api/v1/customer/6af2f817a7fdd69f0e219ba2 404 - 249.048 ms - message: -
+[[32minfo[39m] POST /api/v1/customer/create 201 - 212.997 ms
+[[31merror[39m] POST /api/v1/customer/create 400 - 128.807 ms - message: -
+[[32minfo[39m] POST /api/v1/customer/create 201 - 226.199 ms
+[[31merror[39m] PATCH /api/v1/customer/6af2f817a7fdd69f0e219ba2 404 - 150.889 ms - message: -
+[[32minfo[39m] PATCH /api/v1/customer/6af34659bf3dc529952e3db4 200 - 231.971 ms
+[[32minfo[39m] GET /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 123.148 ms
+[[31merror[39m] DELETE /api/v1/customer/6af2f817a7fdd69f0e219ba2 404 - 232.040 ms - message: -
+[[32minfo[39m] DELETE /api/v1/customer/6af34659bf3dc529952e3db4 200 - 235.499 ms

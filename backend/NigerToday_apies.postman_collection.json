@@ -1,0 +1,2258 @@
+{
+  "info": {
+    "_postman_id": "6042792e-02d4-45ff-9567-1e9f289fadd5",
+    "name": "NigerToday_apies",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37696932",
+    "_collection_link": "https://go.postman.co/collection/37696932-6042792e-02d4-45ff-9567-1e9f289fadd5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "common",
+      "item": [
+        {
+          "name": "Auth",
+          "item": [
+            {
+              "name": "Ragistation",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"firstName\": \"Md. Shadat\",\r\n  \"lastName\": \"Hossain\",\r\n  \"email\": \"rabbihossain872006@gmail.com\",\r\n  \"password\": \"123ASDasd\",\r\n  \"role\": \"admin\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/v1/auth/register",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"firstName\": \"Md. Shadat\",\r\n    \"lastName\": \"Hossain\",\r\n    \"email\": \"shadathossan3500@gmail.com\",\r\n    \"password\": \"1qazxsw2\",\r\n    \"role\": \"user\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/auth/register",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "register"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "101"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"65-w8K9sef3s2f1jZeAnQgMnuKWxNE\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sat, 15 Feb 2025 11:53:36 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 201,\n    \"message\": \"Thank you for registering. Please verify your email\",\n    \"data\": {\n        \"attributes\": {}\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify Email",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"rabbihossain872006@gmail.com\",\r\n    \"code\": \"710967\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/v1/auth/verify-email",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "verify-email"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"email\": \"shadathossan3500@gmail.com\",\r\n    \"code\": \"177528\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/auth/verify-email",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "verify-email"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1012"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"3f4-QE6n6tT+ETl62FvZZUVTA14N1sY\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 04:24:34 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 200,\n    \"message\": \"Email Verified\",\n    \"data\": {\n        \"attributes\": {\n            \"user\": {\n                \"firstName\": \"Md. Shadat\",\n                \"lastName\": \"Hossain\",\n                \"fullName\": \"Md. Shadat Hossain\",\n                \"email\": \"shadathossan3500@gmail.com\",\n                \"image\": \"/uploads/users/user.png\",\n                \"role\": \"user\",\n                \"callingCode\": null,\n                \"phoneNumber\": null,\n                \"nidNumber\": null,\n                \"isNIDVerified\": null,\n                \"dataOfBirth\": null,\n                \"address\": null,\n                \"oneTimeCode\": null,\n                \"isProfileCompleted\": false,\n                \"createdAt\": \"2025-02-16T04:16:58.879Z\",\n                \"id\": \"67b166ba89ff5ba8358f3f07\"\n            },\n            \"tokens\": {\n                \"access\": {\n                    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2IxNjZiYTg5ZmY1YmE4MzU4ZjNmMDciLCJpYXQiOjE3Mzk2Nzk4NzQsImV4cCI6MTc0MzIxOTU1NDE5MCwidHlwZSI6ImFjY2VzcyJ9.KzXaCXQpHPZAHZR4pxKAb4wCDMigYPi9nkd2M75exwI\",\n                    \"expires\": \"2025-03-09T00:24:34.316Z\"\n                },\n                \"refresh\": {\n                    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMTA3LTA0LTA4VDA0OjI0OjM0LjMyNloiLCJpYXQiOjE3Mzk2Nzk4NzQsImV4cCI6MTczOTY3OTg3NCwiYWN0aXZpdHkiOiI2N2IxNjZiYTg5ZmY1YmE4MzU4ZjNmMDcifQ.SW-EqfntCa1Ug1VCfTqHkiRwRe6LUR_pW4-IIBJqOv4\",\n                    \"expires\": \"2107-04-08T04:24:34.326Z\"\n                }\n            }\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Login",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Parse the JSON response body\r",
+                      "let response = pm.response.json();\r",
+                      "\r",
+                      "// Check if the response code is 200 (Login Successful)\r",
+                      "if (response.code === 200) {\r",
+                      "    // Extract the access token\r",
+                      "    let accessToken = response.data.attributes.tokens.access.token;\r",
+                      "    \r",
+                      "    // Set the access token in a global variable\r",
+                      "    pm.globals.set(\"accessToken\", accessToken);\r",
+                      "    \r",
+                      "    console.log(\"Access token set in global variable: userAccessToken\");\r",
+                      "} else {\r",
+                      "    console.log(\"Login failed: \" + response.message);\r",
+                      "}\r",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMTA4LTEyLTI5VDEzOjE1OjQ1LjMzNVoiLCJpYXQiOjE3OTQyMzAxNDUsImV4cCI6MTc5NDIzMDE0NSwiYWN0aXZpdHkiOiI2YWYxYzcyN2VhNDIzYTI2NWY4MWZmMGIifQ.qdBdJhyP_b67_nabuH1EuxxcSa1ELOqCSm4wesh2WLI",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "name": "cache-control",
+                    "sortOrder": 2,
+                    "infoTitle": "We recommend using this header",
+                    "info": "Postman added \"Cache-Control: no-cache\" as a precautionary measure to prevent the server from returning stale response when one makes repeated requests.\n\nYou can remove this header in the app settings or enter a new one with a different value.",
+                    "allowedToToggle": false,
+                    "disableEdit": true,
+                    "previewSettingsLink": "Go to settings",
+                    "key": "Cache-Control",
+                    "value": "no-cache",
+                    "system": true,
+                    "type": "text"
+                  },
+                  {
+                    "name": "postman-token",
+                    "sortOrder": 3,
+                    "infoTitle": "We recommend using this header",
+                    "info": "The Postman-Token header appends a random UUID to every outgoing request. Postman adds this header for API developers to better debug requests sent and to ensure separate requests appear distinct to the receiving server.\n\nYou can remove this header in the app settings.",
+                    "allowedToToggle": false,
+                    "disableEdit": true,
+                    "previewSettingsLink": "Go to settings",
+                    "key": "Postman-Token",
+                    "value": "<calculated when request is sent>",
+                    "system": true,
+                    "type": "text"
+                  },
+                  {
+                    "name": "content-type",
+                    "sortOrder": 4,
+                    "infoTitle": "This header was automatically added",
+                    "info": "The Content-Type header is added to help the server identify the media type of the request body that is present in this request.\n\nUse the request body tab to control the value or to remove this header.",
+                    "allowedToToggle": true,
+                    "disableEdit": true,
+                    "previewSettingsLink": "Go to body",
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "system": true,
+                    "type": "text"
+                  },
+                  {
+                    "name": "content-length",
+                    "sortOrder": 5,
+                    "infoTitle": "This header was automatically added",
+                    "info": "The Content-Length header was added to indicate to the server the size of the request body that is added to this request. Server uses this value to parse the request body accurately.\n\nYou can remove the header or enter a new one with a different value.",
+                    "allowedToToggle": true,
+                    "disableEdit": true,
+                    "previewSettingsLink": "Go to body",
+                    "key": "Content-Length",
+                    "value": "<calculated when request is sent>",
+                    "system": true,
+                    "type": "text"
+                  },
+                  {
+                    "name": "host",
+                    "sortOrder": 6,
+                    "infoTitle": "We recommend using this header",
+                    "info": "The Host header is added to identify the domain name for which a request is being sent to the server. This header is implicitly sent by every HTTP client.\n\nYou can remove the header or enter a new one with a different value. It is most likely that without this header, your request will return an HTTP 400 error.",
+                    "allowedToToggle": true,
+                    "disableEdit": true,
+                    "key": "Host",
+                    "value": "<calculated when request is sent>",
+                    "system": true,
+                    "type": "text"
+                  },
+                  {
+                    "name": "user-agent",
+                    "sortOrder": 7,
+                    "infoTitle": "We recommend using this header",
+                    "info": "The User-Agent header is added to help the server identify Postman as the HTTP requesting application or client.\n\nIt is recommended that this header be sent, but you can remove the header or enter a new one with a different value.",
+                    "allowedToToggle": true,
+                    "disableEdit": true,
+                    "key": "User-Agent",
+                    "value": "PostmanRuntime/7.56.3",
+                    "system": true,
+                    "type": "text"
+                  },
+                  {
+                    "name": "accept",
+                    "sortOrder": 8,
+                    "infoTitle": "We recommend using this header",
+                    "info": "The \"Accept: */*\" header is added to tell the server that Postman can understand and process all forms of response content types.\n\nIt is recommended that this header be sent, but you can remove the header or enter a new one with a different value.",
+                    "allowedToToggle": true,
+                    "disableEdit": true,
+                    "key": "Accept",
+                    "value": "*/*",
+                    "system": true,
+                    "type": "text"
+                  },
+                  {
+                    "name": "accept-encoding",
+                    "sortOrder": 9,
+                    "infoTitle": "We recommend using this header",
+                    "info": "The Accept-Encoding header is added to indicate to the server that Postman HTTP client supports a defined list of content-encoding or compression algorithms as response.\n\nYou can remove the header or enter a new one with a different value. Doing that may not accurately render the response within the app.",
+                    "allowedToToggle": true,
+                    "disableEdit": true,
+                    "key": "Accept-Encoding",
+                    "value": "gzip, deflate, br",
+                    "system": true,
+                    "type": "text"
+                  },
+                  {
+                    "name": "connection",
+                    "sortOrder": 10,
+                    "infoTitle": "We recommend using this header",
+                    "info": "Postman added the Connection header to indicate the server to keep the underlying network connection open once the current response is received. This allows Postman to reuse the same connection for faster response times in subsequent requests to the same server.\n\nYou can remove this header or enter a new one with a different value, such as `Connection: Close` to control this behaviour.",
+                    "allowedToToggle": true,
+                    "disableEdit": true,
+                    "key": "Connection",
+                    "value": "keep-alive",
+                    "system": true,
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text",
+                    "id": 0
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"rabbihossain872006@gmail.com\",\r\n    \"password\": \"123ASDasd\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/v1/auth/login",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"email\": \"shadathossan3500@gmail.com\",\r\n    \"password\": \"1qazxsw2\",\r\n    \"fcmToken\": \"The firebase FCM token\" // // onlly uee for push notification / mobile focus *\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/auth/login",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1014"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"3f6-H96aeXQd4i7LPbkvF5oVxkzloXM\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 04:25:18 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 200,\n    \"message\": \"Login Successful\",\n    \"data\": {\n        \"attributes\": {\n            \"user\": {\n                \"firstName\": \"Md. Shadat\",\n                \"lastName\": \"Hossain\",\n                \"fullName\": \"Md. Shadat Hossain\",\n                \"email\": \"shadathossan3500@gmail.com\",\n                \"image\": \"/uploads/users/user.png\",\n                \"role\": \"user\",\n                \"callingCode\": null,\n                \"phoneNumber\": null,\n                \"nidNumber\": null,\n                \"isNIDVerified\": null,\n                \"dataOfBirth\": null,\n                \"address\": null,\n                \"oneTimeCode\": null,\n                \"isProfileCompleted\": false,\n                \"createdAt\": \"2025-02-16T04:16:58.879Z\",\n                \"id\": \"67b166ba89ff5ba8358f3f07\"\n            },\n            \"tokens\": {\n                \"access\": {\n                    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2IxNjZiYTg5ZmY1YmE4MzU4ZjNmMDciLCJpYXQiOjE3Mzk2Nzk5MTgsImV4cCI6MTc0MzIxOTU5ODkxMiwidHlwZSI6ImFjY2VzcyJ9.P_SNm_ml5_pQq-wTKxxaoqLXwUJcEk31JlSRCv_H610\",\n                    \"expires\": \"2025-03-09T00:25:18.994Z\"\n                },\n                \"refresh\": {\n                    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMTA3LTA0LTA4VDA0OjI1OjE4Ljk5NVoiLCJpYXQiOjE3Mzk2Nzk5MTgsImV4cCI6MTczOTY3OTkxOCwiYWN0aXZpdHkiOiI2N2IxNjZiYTg5ZmY1YmE4MzU4ZjNmMDcifQ.7Q9XnI_udHwjy6H3vnXNRMzOXuwD-3IC2GoD5bn4BwQ\",\n                    \"expires\": \"2107-04-08T04:25:18.995Z\"\n                }\n            }\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Forgot Password",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"shadathossan3500@gmail.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/v1/auth/forgot-password",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "forgot-password"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"email\": \"shadathossan3500@gmail.com\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/auth/forgot-password",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "forgot-password"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "60"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"3c-JjH9JaUcWLcq5zsoboss1AWrZsE\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 04:30:01 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 200,\n    \"message\": \"Email Sent\",\n    \"data\": {\n        \"attributes\": {}\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Reset Password",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"shadathossan3500@gmail.com\",\r\n    \"password\": \"2wsxzaq1\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/v1/auth/reset-password",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "reset-password"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "200 Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"email\": \"shadathossan3500@gmail.com\",\r\n    \"password\": \"2wsxzaq1\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/auth/reset-password",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "reset-password"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "75"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"4b-k/SAidJMdC6nc5lf59RR8Svpiwk\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 04:50:37 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 200,\n    \"message\": \"Password Reset Successful\",\n    \"data\": {\n        \"attributes\": {}\n    }\n}"
+                },
+                {
+                  "name": "400 Error",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"email\": \"shadathossan3500@gmail.com\",\r\n    \"password\": \"1qazxsw2\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/auth/reset-password",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "reset-password"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "452"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1c4-NwiUkV4CUnBaaRpeIRoJzqFIEhU\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 04:49:24 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 400,\n    \"message\": \"You have previously used this password. Please choose a different one. Try again with a new password.\",\n    \"stack\": \"Error: You have previously used this password. Please choose a different one. Try again with a new password.\\n    at Object.resetPassword (D:\\\\Md. Shadat Hossain\\\\Backend Tamplat\\\\src\\\\services\\\\auth.service.js:62:11)\\n    at async D:\\\\Md. Shadat Hossain\\\\Backend Tamplat\\\\src\\\\controllers\\\\auth.controller.js:140:3\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Change Password",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"oldPassword\": \"2ws2342fsFSxzaq1\",\r\n    \"newPassword\": \"4234sfsfsdf\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/v1/auth/change-password",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "change-password"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"oldPassword\": \"2wsxzaq1\",\r\n    \"newPassword\": \"1qazxsw2\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/auth/change-password",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "change-password"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "76"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"4c-dv1PzKntj1NeU8trqUcaAbeaKSY\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 05:18:04 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 200,\n    \"message\": \"Password Change Successful\",\n    \"data\": {\n        \"attributes\": {}\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "logout",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMTA3LTA0LTA4VDA1OjIzOjQxLjYzNFoiLCJpYXQiOjE3Mzk2ODM0MjEsImV4cCI6MTczOTY4MzQyMSwiYWN0aXZpdHkiOiI2N2IxNjZiYTg5ZmY1YmE4MzU4ZjNmMDcifQ.TgJ4poj6MmvUCNzZwItXggZdqdJqxSyxs8V0XaYcMCY\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/v1/auth/logout",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "logout"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMTA3LTA0LTA4VDA1OjIzOjQxLjYzNFoiLCJpYXQiOjE3Mzk2ODM0MjEsImV4cCI6MTczOTY4MzQyMSwiYWN0aXZpdHkiOiI2N2IxNjZiYTg5ZmY1YmE4MzU4ZjNmMDcifQ.TgJ4poj6MmvUCNzZwItXggZdqdJqxSyxs8V0XaYcMCY\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/auth/logout",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "logout"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "52"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"34-Lw0jqmbooNm5QRsnUBg64u4pJW4\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 05:24:00 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 200,\n    \"message\": \"LogOut Successful\",\n    \"data\": {}\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Profile",
+          "item": [
+            {
+              "name": "Get Profile",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/v1/users/self/in",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "self",
+                    "in"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/api/v1/users/self/in",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "users",
+                        "self",
+                        "in"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "547"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"223-RuRHrSaSO8SmMJMBe3oLiHS4iA4\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 05:44:58 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 200,\n    \"message\": \"User Profile\",\n    \"data\": {\n        \"attributes\": {\n            \"user\": {\n                \"firstName\": \"Md. Shadat\",\n                \"lastName\": \"Hossain\",\n                \"fullName\": \"Md. Shadat Hossain\",\n                \"email\": \"shadathossan3500@gmail.com\",\n                \"image\": \"/uploads/users/user.png\",\n                \"role\": \"user\",\n                \"callingCode\": null,\n                \"phoneNumber\": null,\n                \"nidNumber\": null,\n                \"isNIDVerified\": null,\n                \"dataOfBirth\": null,\n                \"address\": null,\n                \"oneTimeCode\": null,\n                \"isProfileCompleted\": false,\n                \"createdAt\": \"2025-02-16T04:16:58.879Z\",\n                \"id\": \"67b166ba89ff5ba8358f3f07\"\n            },\n            \"securitySettings\": {\n                \"recoveryEmail\": null,\n                \"recoveryPhone\": null,\n                \"securityQuestion\": null\n            }\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Profile Update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "firstName",
+                      "value": "Md. Shadat",
+                      "type": "text"
+                    },
+                    {
+                      "key": "lastName",
+                      "value": "Hossain",
+                      "type": "text"
+                    },
+                    {
+                      "key": "callingCode",
+                      "value": "+880",
+                      "type": "text"
+                    },
+                    {
+                      "key": "phoneNumber",
+                      "value": "1757054846",
+                      "type": "text"
+                    },
+                    {
+                      "key": "nidNumber",
+                      "value": "4678972377",
+                      "type": "text"
+                    },
+                    {
+                      "key": "dataOfBirth",
+                      "value": "2000-07-27",
+                      "type": "text"
+                    },
+                    {
+                      "key": "address",
+                      "value": "Dhaka, Bangladesh",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": "/C:/Users/bdCalling/Downloads/colleagues.JPG"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/v1/users/self/update",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "self",
+                    "update"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "firstName",
+                          "value": "Md. Shadat",
+                          "type": "text"
+                        },
+                        {
+                          "key": "lastName",
+                          "value": "Hossain",
+                          "type": "text"
+                        },
+                        {
+                          "key": "callingCode",
+                          "value": "+880",
+                          "type": "text"
+                        },
+                        {
+                          "key": "phoneNumber",
+                          "value": "1757054846",
+                          "type": "text"
+                        },
+                        {
+                          "key": "nidNumber",
+                          "value": "4678972377",
+                          "type": "text"
+                        },
+                        {
+                          "key": "dateOfBirth",
+                          "value": "2000-27-07",
+                          "type": "text"
+                        },
+                        {
+                          "key": "address",
+                          "value": "Dhaka, Bangladesh",
+                          "type": "text"
+                        },
+                        {
+                          "key": "image",
+                          "type": "file",
+                          "src": "/C:/Users/bdCalling/Downloads/colleagues.JPG"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/users/self/update",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "users",
+                        "self",
+                        "update"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "481"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1e1-c6NlGzmQFNS8D6Uxer9EDjM2XtM\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 06:12:18 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 200,\n    \"message\": \"User Updated\",\n    \"data\": {\n        \"attributes\": {\n            \"firstName\": \"Md. Shadat\",\n            \"lastName\": \"Hossain\",\n            \"fullName\": \"Md. Shadat Hossain\",\n            \"email\": \"shadathossan3500@gmail.com\",\n            \"image\": \"/uploads/users/colleagues-1739686338668.JPG\",\n            \"role\": \"user\",\n            \"callingCode\": \"+880\",\n            \"phoneNumber\": 1757054846,\n            \"nidNumber\": 4678972377,\n            \"isNIDVerified\": null,\n            \"dataOfBirth\": null,\n            \"address\": \"Dhaka, Bangladesh\",\n            \"isProfileCompleted\": false,\n            \"createdAt\": \"2025-02-16T04:16:58.879Z\",\n            \"id\": \"67b166ba89ff5ba8358f3f07\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Delete Profile",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"password\": \"1qazxsw2\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/v1/auth/delete-me",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "delete-me"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"password\": \"1qazxsw2\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/auth/delete-me",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "delete-me"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "493"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1ed-u7JnPShK/A6+D2ekzs6kj4NCrRk\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 06:17:48 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 200,\n    \"message\": \"Account Deleted\",\n    \"data\": {\n        \"attributes\": {\n            \"user\": {\n                \"firstName\": \"Md. Shadat\",\n                \"lastName\": \"Hossain\",\n                \"fullName\": \"Md. Shadat Hossain\",\n                \"email\": \"shadathossan3500@gmail.com\",\n                \"image\": \"/uploads/users/colleagues-1739686338668.JPG\",\n                \"role\": \"user\",\n                \"callingCode\": \"+880\",\n                \"phoneNumber\": 1757054846,\n                \"nidNumber\": 4678972377,\n                \"isNIDVerified\": null,\n                \"dataOfBirth\": null,\n                \"address\": \"Dhaka, Bangladesh\",\n                \"isProfileCompleted\": false,\n                \"createdAt\": \"2025-02-16T04:16:58.879Z\",\n                \"id\": \"67b166ba89ff5ba8358f3f07\"\n            }\n        }\n    }\n}"
+                },
+                {
+                  "name": "Error",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"password\": \"2wsxzaq1\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/auth/delete-me",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "delete-me"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=15552000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "283"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"11b-KNE1BkIA18KJdfWitkn2ws0xA3Q\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 16 Feb 2025 06:19:20 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"code\": 400,\n    \"message\": \"Incorrect password\",\n    \"stack\": \"Error: Incorrect password\\n    at Object.deleteMe (D:\\\\Md. Shadat Hossain\\\\Backend Tamplat\\\\src\\\\services\\\\auth.service.js:146:11)\\n    at async D:\\\\Md. Shadat Hossain\\\\Backend Tamplat\\\\src\\\\controllers\\\\auth.controller.js:192:16\"\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "Create Customer",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWYxYzkzMTk5OGI3MjVkOGRmYjViOWQiLCJpYXQiOjE3OTQyMzA2NDIsImV4cCI6MTc5NzgyNDg3MzAyNCwidHlwZSI6ImFjY2VzcyJ9.VyjO1NXvsrMwkHoYEbD-qK8uwNt_YDIQ7TH1f4I5_PM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"fullName\":\"temporfsdfsdfdsary\",\n    \"phone\":\"0123131230\",\n    \"email\":\"tempo@gmail.com\",\n    \"startDate\":\"\",\n    \"durationMonts\":\"\",\n    \"expiresAt\":\"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/customer/create",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Customer",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWYxYzkzMTk5OGI3MjVkOGRmYjViOWQiLCJpYXQiOjE3OTQyMzA2NDIsImV4cCI6MTc5NzgyNDg3MzAyNCwidHlwZSI6ImFjY2VzcyJ9.VyjO1NXvsrMwkHoYEbD-qK8uwNt_YDIQ7TH1f4I5_PM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"fullName\":\"RabbiHOssain\",\n    \"phone\":\"0123131230\",\n    \"email\":\"absdsh@gmail.com\",\n    \"startDate\":\"\",\n    \"durationMonts\":\"\",\n    \"expiresAt\":\"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/customer/6af2f817a7fdd69f0e219ba2",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                "6af2f817a7fdd69f0e219ba2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Customer",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWYxYzkzMTk5OGI3MjVkOGRmYjViOWQiLCJpYXQiOjE3OTQyMzA2NDIsImV4cCI6MTc5NzgyNDg3MzAyNCwidHlwZSI6ImFjY2VzcyJ9.VyjO1NXvsrMwkHoYEbD-qK8uwNt_YDIQ7TH1f4I5_PM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"startDate\": \"2026-11-01\",\n  \"durationMonts\": 6,\n  \"expiresAt\": \"2027-05-01\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/customer/6af2f817a7fdd69f0e219ba2",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                "6af2f817a7fdd69f0e219ba2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer List",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWYxYzkzMTk5OGI3MjVkOGRmYjViOWQiLCJpYXQiOjE3OTQyNDA1NDEsImV4cCI6MTc5NzgzNDc4MjI0MywidHlwZSI6ImFjY2VzcyJ9.oGZUL-RkMzsctUEV4_Q2OtNCpaaCnPgWODZJesfBJ9o",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"fullName\":\"RabbiHOssain\",\n    \"phone\":\"0123131230\",\n    \"email\":\"rabbih@gmail.com\",\n    \"startDate\":\"\",\n    \"durationMonts\":\"\",\n    \"expiresAt\":\"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/customer/customers-list?page=1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                "customers-list"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Customer",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWYxYzkzMTk5OGI3MjVkOGRmYjViOWQiLCJpYXQiOjE3OTQyODM2NTMsImV4cCI6MTc5Nzg3NzkzNzAwMCwidHlwZSI6ImFjY2VzcyJ9.xviJnyqGKq1yEQi2W6XzKjev4_HErnwlOW0eODr2Ws8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"fullName\":\"RabbiHOssain\",\n    \"phone\":\"0123131230\",\n    \"email\":\"rabbih@gmail.com\",\n    \"startDate\":\"\",\n    \"durationMonts\":\"\",\n    \"expiresAt\":\"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/customer/6af1f4f88dcfd0555a712dbc",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                "6af1f4f88dcfd0555a712dbc"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Get dashboard stats",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWYxYzkzMTk5OGI3MjVkOGRmYjViOWQiLCJpYXQiOjE3OTQyODM2NTMsImV4cCI6MTc5Nzg3NzkzNzAwMCwidHlwZSI6ImFjY2VzcyJ9.xviJnyqGKq1yEQi2W6XzKjev4_HErnwlOW0eODr2Ws8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"fullName\":\"RabbiHOssain\",\n    \"phone\":\"0123131230\",\n    \"email\":\"rabbih@gmail.com\",\n    \"startDate\":\"\",\n    \"durationMonts\":\"\",\n    \"expiresAt\":\"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/customer/dashboard-stats",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                "dashboard-stats"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": "http://10.0.60.206:3000",
+      "type": "string"
+    }
+  ]
+}
