@@ -32,8 +32,6 @@ const createCustomer = catchAsync(async (req, res) => {
 
 
 
-
-
 const getCustomerList = catchAsync(async (req, res) => {
   const customers = await customerService.getCustomerList(req.query);
 
@@ -56,8 +54,6 @@ const getCustomerList = catchAsync(async (req, res) => {
     })
   )
 })
-
-
 
 
 
@@ -88,7 +84,6 @@ const getSingleCustomer = catchAsync(async(req,res)=>{
     );
 
 })
-
 
 
 
