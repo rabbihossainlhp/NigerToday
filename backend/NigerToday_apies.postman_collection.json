@@ -1986,7 +1986,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"fullName\":\"temporfsdfsdfdsary\",\n    \"phone\":\"0123131230\",\n    \"email\":\"tempo@gmail.com\",\n    \"startDate\":\"\",\n    \"durationMonts\":\"\",\n    \"expiresAt\":\"\"\n}",
+              "raw": "{\n    \"fullName\":\"temporfsdfsdfdsary\",\n    \"phone\":\"0123131230\",\n    \"email\":\"teo@gmail.com\",\n    \"startDate\":\"\",\n    \"durationMonts\":\"\",\n    \"expiresAt\":\"\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2072,7 +2072,7 @@
               }
             },
             "url": {
-              "raw": "{{url}}/api/v1/customer/6af2f817a7fdd69f0e219ba2",
+              "raw": "{{url}}/api/v1/customer/6af34659bf3dc529952e3db4",
               "host": [
                 "{{url}}"
               ],
@@ -2080,7 +2080,7 @@
                 "api",
                 "v1",
                 "customer",
-                "6af2f817a7fdd69f0e219ba2"
+                "6af34659bf3dc529952e3db4"
               ]
             }
           },
@@ -2114,7 +2114,7 @@
               }
             },
             "url": {
-              "raw": "{{url}}/api/v1/customer/customers-list?page=1",
+              "raw": "{{url}}/api/v1/customer/customers-list?page=1&limit=1&search=rabbih@gmail.com",
               "host": [
                 "{{url}}"
               ],
@@ -2128,6 +2128,14 @@
                 {
                   "key": "page",
                   "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "1"
+                },
+                {
+                  "key": "search",
+                  "value": "rabbih@gmail.com"
                 }
               ]
             }
@@ -2209,15 +2217,111 @@
               }
             },
             "url": {
-              "raw": "{{url}}/api/v1/customer/dashboard-stats",
+              "raw": "{{url}}/api/v1/dashboard/stats",
               "host": [
                 "{{url}}"
               ],
               "path": [
                 "api",
                 "v1",
-                "customer",
-                "dashboard-stats"
+                "dashboard",
+                "stats"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Renewals",
+      "item": [
+        {
+          "name": "Create Renewal",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"customerId\":\"6af92b74e6aa9fe3de753099\",\n  \"periodStart\": \"2026-03-15T00:00:00.000Z\",\n  \"durationMonths\": 3,\n  \"type\": \"renewal\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/renewals",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "renewals"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Renewal",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"periodStart\": \"2026-11-15T00:00:00.000Z\",\n  \"durationMonths\": 6,\n  \"type\": \"renewal\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/renewals",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "renewals"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single  Renewal",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"periodStart\": \"2026-11-15T00:00:00.000Z\",\n  \"durationMonths\": 6,\n  \"type\": \"renewal\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/renewals/6af92b74e6aa9fe3de753099",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "renewals",
+                "6af92b74e6aa9fe3de753099"
               ]
             }
           },
