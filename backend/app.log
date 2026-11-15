@@ -2171,3 +2171,94 @@
 [[32minfo[39m] POST /api/v1/renewals 201 - 221.316 ms
 [[32minfo[39m] POST /api/v1/renewals 201 - 218.914 ms
 [[32minfo[39m] GET /api/v1/renewals/6af92b74e6aa9fe3de753099 200 - 91.671 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: Invalid customer ID format!
+    at Object.findCustomer (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/customer.service.js:63:16)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:63:42
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/customer/dashboard-stats 400 - 1892.063 ms - message: Invalid customer ID format!
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+[[31merror[39m] GET /api/v1/dashboard 404 - 14.837 ms - message: This API Not found
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+[[31merror[39m] GET /api/v1/dashboard/states 404 - 2.823 ms - message: This API Not found
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] ReferenceError: Customer is not defined
+    at Object.getDashboardStats (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/dashboard.service.js:8:7)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/dashboard.controller.js:7:40
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/dashboard/stats 500 - 125.816 ms - message: Customer is not defined
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] ReferenceError: httpStatus is not defined
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/dashboard.controller.js:9:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/dashboard/stats 500 - 227.620 ms - message: httpStatus is not defined
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] ReferenceError: response is not defined
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/dashboard.controller.js:10:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/dashboard/stats 500 - 210.537 ms - message: response is not defined
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] GET /api/v1/dashboard/stats 200 - 171.551 ms
+[[32minfo[39m] Connected to email server
+[[31merror[39m] POST /api/v1/renewals 400 - 28.139 ms - message: -
+[[31merror[39m] POST /api/v1/renewals 400 - 2.120 ms - message: -
+[[32minfo[39m] POST /api/v1/renewals 201 - 205.503 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 200 - 103.502 ms
+[[32minfo[39m] POST /api/v1/renewals 201 - 433.969 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 200 - 130.809 ms
+[[32minfo[39m] POST /api/v1/renewals 201 - 183.341 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 200 - 102.038 ms
+[[32minfo[39m] POST /api/v1/renewals 201 - 171.344 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 200 - 94.454 ms

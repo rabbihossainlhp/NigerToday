@@ -1,7 +1,6 @@
 
 const mongoose = require("mongoose");
-const Customer = require("../models/customer.model");
-const Renewal = require("../models/renewal.model");
+const {Customer,Renewal} = require("../models");
 
 
 

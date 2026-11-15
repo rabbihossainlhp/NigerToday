@@ -5,6 +5,7 @@ const userRoute = require("./user.routes");
 const docsRoute = require("./docs.routes");
 const customerRoute = require("./customer.routes");
 const renewalRoute = require("./renewal.routes")
+const dashboardRoute = require("./dashboard.routes")
 
 
 
@@ -26,6 +27,10 @@ const defaultRoutes = [
   {
     path:"/renewals",
     route:renewalRoute
+  },
+    {
+    path:"/dashboard",
+    route:dashboardRoute
   }
  
 ];

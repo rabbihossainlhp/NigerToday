@@ -8,9 +8,6 @@ const router = express.Router();
 router.route("/create").post(auth("admin"), customerController.createCustomer);
 router.route("/customers-list").get(auth("admin"), customerController.getCustomerList);
 
-//for dashboard statistic....
-router.route("/dashboard-stats").get(auth("admin"), customerController.getDashboardStats)
-
 
 router.route("/:id")
     .get(auth("admin"), customerController.getSingleCustomer)
