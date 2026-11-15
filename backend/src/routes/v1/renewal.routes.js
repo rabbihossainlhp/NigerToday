@@ -9,7 +9,7 @@ router.post("/", renewalController.createRenewal);
 router.get("/", renewalController.getAllRenewals);
 
 router.get(
-  "/customer/:customerId",
+  "/:customerId",
   renewalController.getRenewalsByCustomer
 );
 

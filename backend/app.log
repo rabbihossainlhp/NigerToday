@@ -2130,3 +2130,44 @@
 [[32minfo[39m] Listening to ip http://192.168.0.117:3000
 [[32minfo[39m] Connected to email server
 [[32minfo[39m] POST /api/v1/renewals 201 - 331.219 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/renewals 200 - 197.290 ms
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at router.handle (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:47:12)
+[[31merror[39m] GET /api/v1/renewal/6af92b74e6aa9fe3de753099 404 - 4.418 ms - message: This API Not found
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at router.handle (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:47:12)
+[[31merror[39m] GET /api/v1/renewal/6af92b74e6aa9fe3de753099 404 - 46.117 ms - message: This API Not found
+[[32minfo[39m] GET /api/v1/renewals/6af92b74e6aa9fe3de753099 200 - 189.597 ms
+[[31merror[39m] ValidationError: Renewal validation failed: durationMonths: `7` is not a valid enum value for path `durationMonths`.
+    at Document.invalidate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/document.js:3238:32)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/document.js:3031:17
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+[[31merror[39m] POST /api/v1/renewals 400 - 62.082 ms - message: Renewal validation failed: durationMonths: `7` is not a valid enum value for path `durationMonths`.
+[[32minfo[39m] POST /api/v1/renewals 201 - 221.316 ms
+[[32minfo[39m] POST /api/v1/renewals 201 - 218.914 ms
+[[32minfo[39m] GET /api/v1/renewals/6af92b74e6aa9fe3de753099 200 - 91.671 ms
