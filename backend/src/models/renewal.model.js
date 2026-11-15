@@ -1,6 +1,7 @@
+
 const mongoose = require("mongoose");
 
-const renewalSchema = new mongoose.Schema(
+const renewalSchema = mongoose.Schema(
     {
         customerId: {
             type: mongoose.Schema.Types.ObjectId,
@@ -8,31 +9,35 @@ const renewalSchema = new mongoose.Schema(
             required: true,
             index: true,
         },
+
         periodStart: {
             type: Date,
             required: true,
         },
+
         periodEnd: {
             type: Date,
             required: true,
         },
+
         durationMonths: {
             type: Number,
             required: true,
-            min: 1,
+            enum: [3, 6, 12],
         },
+
         type: {
             type: String,
             enum: ["initial", "renewal"],
             required: true,
+            default: "renewal",
         },
     },
     {
-        timestamps: { createdAt: true, updatedAt: false },
-        versionKey: false,
+        timestamps: true,
     }
 );
 
-renewalSchema.index({ customerId: 1, periodStart: -1 });
+const Renewal = mongoose.model("Renewal", renewalSchema);
 
-module.exports = mongoose.model("Renewal", renewalSchema);
+module.exports = Renewal;

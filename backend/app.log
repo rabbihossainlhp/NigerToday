@@ -2019,3 +2019,114 @@
 [[32minfo[39m] GET /api/v1/customer/6af1f4f88dcfd0555a712dbc 200 - 123.148 ms
 [[31merror[39m] DELETE /api/v1/customer/6af2f817a7fdd69f0e219ba2 404 - 232.040 ms - message: -
 [[32minfo[39m] DELETE /api/v1/customer/6af34659bf3dc529952e3db4 200 - 235.499 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at router.handle (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:47:12)
+[[31merror[39m] POST /api/v1/renewals 404 - 77.916 ms - message: This API Not found
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+[[31merror[39m] POST /api/v1/renewals 404 - 46.544 ms - message: This API Not found
+[[31merror[39m] SyntaxError: Expected double-quoted property name in JSON at position 138 (line 6 column 24)
+    at JSON.parse (<anonymous>)
+    at parse (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/body-parser/lib/types/json.js:96:19)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/body-parser/lib/read.js:146:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/raw-body/index.js:238:16)
+    at done (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:514:20)
+    at endReadableNT (node:internal/streams/readable:2147:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[[31merror[39m] POST /api/v1/customer/create 400 - 9.916 ms - message: Expected double-quoted property name in JSON at position 138 (line 6 column 24)
+[[32minfo[39m] POST /api/v1/customer/create 201 - 278.451 ms
+[[31merror[39m] POST /api/v1/customer/create 400 - 145.947 ms - message: -
+[[32minfo[39m] POST /api/v1/customer/create 201 - 153.770 ms
+[[32minfo[39m] GET /api/v1/customer/dashboard-stats 200 - 111.980 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] SyntaxError: Expected double-quoted property name in JSON at position 138 (line 6 column 24)
+    at JSON.parse (<anonymous>)
+    at parse (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/body-parser/lib/types/json.js:96:19)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/body-parser/lib/read.js:146:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/raw-body/index.js:238:16)
+    at done (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:514:20)
+    at endReadableNT (node:internal/streams/readable:2147:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[[31merror[39m] POST /api/v1/customer/create 400 - 44.700 ms - message: Expected double-quoted property name in JSON at position 138 (line 6 column 24)
+[[32minfo[39m] POST /api/v1/customer/create 201 - 314.113 ms
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+[[31merror[39m] POST /api/v1/renewals 404 - 11.034 ms - message: This API Not found
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] TypeError: Cannot read properties of undefined (reading 'createRenewal')
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/renewal.controller.js:37:40
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at router.handle (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:175:3)
+[[31merror[39m] POST /api/v1/renewals 500 - 59.342 ms - message: Cannot read properties of undefined (reading 'createRenewal')
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] TypeError: Cannot read properties of undefined (reading 'createRenewal')
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/renewal.controller.js:37:40
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at router.handle (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:175:3)
+[[31merror[39m] POST /api/v1/renewals 500 - 133.969 ms - message: Cannot read properties of undefined (reading 'createRenewal')
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] POST /api/v1/renewals 201 - 331.219 ms
