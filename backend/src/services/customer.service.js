@@ -1,5 +1,5 @@
 const httpStatus = require("http-status");
-const { Customer } = require("../models");
+const { Customer,Renewal } = require("../models");
 const ApiError = require("../utils/ApiError");
 const mongoose = require("mongoose");
 
@@ -17,40 +17,19 @@ const createCustomer = async (customerBody) => {
 
 
 
-const getCustomerList = async(query) =>{
-   const page = Number(query.page) || 1;
-   const limit = Number(query.limit) || 20;
-   const skip = (page - 1) * limit;
+const getCustomerList = async(filter,{skip,limit}) =>{
+   const [result,totalResult] = await Promise.all([
+      Customer.find(filter).skip(skip).limit(limit).sort({createdAt: -1}),
+      Customer.countDocuments(filter)
+   ])
+  
 
-
-   //filter_object 
-   const filter = {};
-
-   if(query.search){
-      filter.email = query.search 
-   }
-   if(query.status){
-      filter.status = query.status 
-   }
-
-   const customers = await Customer.find(filter)
-                     .skip(skip)
-                     .limit(limit)
-                     .sort({createdAt: -1})
-
-   
-   const totalResult = await Customer.countDocuments(filter);
-
-   return{
-      results: customers,
-      page,
-      limit,
-      totalPages:Math.ceil(totalResult/limit),
+   return {
+      result,
       totalResult
    }
+
 }
-
-
 
 const findCustomer = async (filter) => {
    if (typeof filter === "string") {

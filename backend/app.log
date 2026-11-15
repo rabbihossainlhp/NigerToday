@@ -2262,3 +2262,85 @@
 [[32minfo[39m] GET /api/v1/dashboard/stats 200 - 102.038 ms
 [[32minfo[39m] POST /api/v1/renewals 201 - 171.344 ms
 [[32minfo[39m] GET /api/v1/dashboard/stats 200 - 94.454 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1 200 - 217.953 ms
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1 200 - 165.231 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=2 200 - 124.185 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=5 200 - 424.955 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] ReferenceError: filter is not defined
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:59:5
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/customer/customers-list?page=1&limit=5 500 - 101.248 ms - message: filter is not defined
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=5 200 - 165.932 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1 200 - 104.128 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1&email=rabbihossain872006@gmail.com 200 - 114.723 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:808:11)
+    at ServerResponse.header (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/response.js:278:15)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/customer.controller.js:73:29
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] GET /api/v1/customer/customers-list?page=1&limit=1&search=rabbihossain872006@gmail.com 500 - 219.599 ms - message: Cannot set headers after they are sent to the client
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1&search=rabbih@gmail.com 200 - 114.346 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1&search=rabbih@gmail.com 200 - 160.906 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&search=rabbih@gmail.com 200 - 534.264 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&search=rabbih@gmail.com 200 - 187.672 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&search=rabbih@gmail.com 200 - 238.469 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&search=rabbih@gmail.com 200 - 220.819 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&search=rabbih@gmail.com 200 - 97.815 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
