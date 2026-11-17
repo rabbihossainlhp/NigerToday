@@ -13,3 +13,5 @@ module.exports.Support = require('./support.model');
 module.exports.Customer = require("./customer.model");
 
 module.exports.Renewal = require("./renewal.model");
+
+module.exports.Settings = require("./settings.model");

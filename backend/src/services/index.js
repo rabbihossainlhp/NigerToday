@@ -7,3 +7,6 @@ module.exports.userService = require('./user.service');
 module.exports.customerService = require('./customer.service');
 module.exports.renewalService = require("./renewal.service");
 module.exports.dashboardService = require("./dashboard.service");
+
+module.exports.settingsService = require("./settings.service");
+

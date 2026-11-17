@@ -6,6 +6,7 @@ const docsRoute = require("./docs.routes");
 const customerRoute = require("./customer.routes");
 const renewalRoute = require("./renewal.routes")
 const dashboardRoute = require("./dashboard.routes")
+const settingsRoute = require("./settings.routes")
 
 
 
@@ -31,6 +32,10 @@ const defaultRoutes = [
     {
     path:"/dashboard",
     route:dashboardRoute
+  },
+  {
+    path:"/settings",
+    route:settingsRoute
   }
  
 ];
