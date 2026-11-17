@@ -147,7 +147,8 @@ export const newCustomerDefaults = {
 
 export const dashboardStats = [
   {
-    icon: `"👥"`,
+    icon: null,
+    iconSrc:"/upload/users.png",
     iconClassName: "bg-slate-100",
     label: "Total customers",
     value: 30,

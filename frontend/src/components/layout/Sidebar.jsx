@@ -11,14 +11,17 @@ import Button from "@/components/ui/Button";
 const LOGO_SRC = "/upload/bg_logo.png";
 
 const navigation = [
-  { href: "/dashboard", label: "Dashboard", icon: "dashboard" },
-  { href: "/customers", label: "Customers", icon: "customers" },
-  { href: "/expiring", label: "Expiring", icon: "expiring" },
-  { href: "/expired", label: "Expired", icon: "expired" },
-  { href: "/settings", label: "Settings", icon: "settings" },
+  { href: "/dashboard", label: "Dashboard", icon: "/upload/grid.png" },
+  { href: "/customers", label: "Customers", icon: "/upload/users.png" },
+  { href: "/expiring", label: "Expiring", icon: "/upload/clock.png" },
+  { href: "/expired", label: "Expired", icon: "/upload/alert.png" },
+  { href: "/settings", label: "Settings", icon: "/upload/settings.png" },
 ];
 
 function NavigationIcon({ name, active }) {
+  if(name.startsWith("/")){
+    return <Image src={name} alt="" width={20} height={20}  className="shrink-0 object-contain" />
+  }
   const className = `h-5 w-5 ${active ? "text-indigo-600 lg:text-white" : "text-slate-400"}`;
 
   if (name === "dashboard") {
@@ -124,18 +127,17 @@ export default function Sidebar() {
                 item.href === "/expiring"
                   ? expiringCount
                   : item.href === "/expired"
-                  ? expiredCount
-                  : null;
+                    ? expiredCount
+                    : null;
 
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center justify-between px-3 py-2.5 rounded-xl transition-colors ${
-                    active
+                  className={`flex items-center justify-between px-3 py-2.5 rounded-xl transition-colors ${active
                       ? "bg-indigo-600 text-white shadow-sm font-semibold"
                       : "text-slate-600 hover:bg-slate-200/60"
-                  }`}
+                    }`}
                 >
                   <span className="flex items-center gap-3">
                     <NavigationIcon name={item.icon} active={active} />
@@ -143,7 +145,7 @@ export default function Sidebar() {
                   </span>
 
                   {count > 0 && (
-                    <span className={`rounded-full ${item.href === "/expired"?  "bg-rose-500": " bg-amber-500"} px-2 py-0.5 text-xs font-bold text-white`}>
+                    <span className={`rounded-full ${item.href === "/expired" ? "bg-rose-500" : " bg-amber-500"} px-2 py-0.5 text-xs font-bold text-white`}>
                       {count}
                     </span>
                   )}
@@ -185,9 +187,8 @@ export default function Sidebar() {
           href="/dashboard"
           onClick={() => setIsMoreMenuOpen(false)}
           aria-current={pathname === "/dashboard" ? "page" : undefined}
-          className={`flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${
-            pathname === "/dashboard" ? "text-indigo-600 font-bold" : "text-slate-500"
-          }`}
+          className={`flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${pathname === "/dashboard" ? "text-indigo-600 font-bold" : "text-slate-500"
+            }`}
         >
           <NavigationIcon name="dashboard" active={pathname === "/dashboard"} />
           Dashboard
@@ -197,9 +198,8 @@ export default function Sidebar() {
           href="/customers"
           onClick={() => setIsMoreMenuOpen(false)}
           aria-current={pathname.startsWith("/customers") ? "page" : undefined}
-          className={`flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${
-            pathname.startsWith("/customers") ? "text-indigo-600 font-bold" : "text-slate-500"
-          }`}
+          className={`flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${pathname.startsWith("/customers") ? "text-indigo-600 font-bold" : "text-slate-500"
+            }`}
         >
           <NavigationIcon name="customers" active={pathname.startsWith("/customers")} />
           Customers
@@ -209,9 +209,8 @@ export default function Sidebar() {
           href="/expiring"
           onClick={() => setIsMoreMenuOpen(false)}
           aria-current={pathname === "/expiring" ? "page" : undefined}
-          className={`relative flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${
-            pathname === "/expiring" ? "text-indigo-600 font-bold" : "text-slate-500"
-          }`}
+          className={`relative flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${pathname === "/expiring" ? "text-indigo-600 font-bold" : "text-slate-500"
+            }`}
         >
           <div className="relative">
             <NavigationIcon name="expiring" active={pathname === "/expiring"} />
@@ -230,9 +229,8 @@ export default function Sidebar() {
           aria-expanded={isMoreMenuOpen}
           aria-controls="mobile-more-menu"
           aria-haspopup="dialog"
-          className={`flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${
-            isMoreActive || isMoreMenuOpen ? "text-indigo-600 font-bold" : "text-slate-500"
-          }`}
+          className={`flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${isMoreActive || isMoreMenuOpen ? "text-indigo-600 font-bold" : "text-slate-500"
+            }`}
         >
           <NavigationIcon name="more" active={isMoreActive || isMoreMenuOpen} />
           More
