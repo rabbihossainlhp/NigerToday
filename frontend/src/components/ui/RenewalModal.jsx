@@ -1,12 +1,24 @@
 import { useState } from "react";
 import { X, RefreshCw, Check } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 export default function RenewalModal({ customer, onClose, onConfirm }) {
   const [months, setMonths] = useState(3);
 
   if (!customer) return null;
 
-  const expiry = new Date(customer.expiryDate || customer.expires);
+  const expiryYear =
+    customer.expires?.match?.(/\d{4}/)?.[0] ||
+    customer.startDate?.match?.(/\d{4}/)?.[0] ||
+    new Date().getFullYear();
+  const expiryValue = customer.expiryDate || `${customer.expires}, ${expiryYear}`;
+  const expiry = /^\d{4}-\d{2}-\d{2}$/.test(expiryValue)
+    ? new Date(
+        Number(expiryValue.slice(0, 4)),
+        Number(expiryValue.slice(5, 7)) - 1,
+        Number(expiryValue.slice(8, 10)),
+      )
+    : new Date(expiryValue);
   expiry.setMonth(expiry.getMonth() + months);
   const newExpiry = expiry.toLocaleDateString("en-US", {
     month: "short",
@@ -28,7 +40,7 @@ export default function RenewalModal({ customer, onClose, onConfirm }) {
               <p className="text-sm text-slate-500">{customer.name}</p>
             </div>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+          <button type="button" aria-label="Close renewal dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
             <X size={20} />
           </button>
         </div>
@@ -84,18 +96,22 @@ export default function RenewalModal({ customer, onClose, onConfirm }) {
 
         {/* Footer Actions */}
         <div className="mt-8 flex justify-end gap-3">
-          <button
+          <Button
+            variant="secondary"
+            size="md"
             onClick={onClose}
-            className="rounded-xl border border-slate-200 px-6 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+            className="px-6"
           >
             Cancel
-          </button>
-          <button
+          </Button>
+          <Button
+            variant="brand"
+            size="md"
             onClick={() => onConfirm(months)}
-            className="flex items-center gap-2 rounded-xl bg-[#5b45e0] px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#4a36c4] transition-colors"
+            className="px-6"
           >
             <Check size={16} /> Confirm renewal
-          </button>
+          </Button>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AUTH_CHANGED_EVENT, AUTH_STORAGE_KEY } from "@/components/auth/AuthGuard";
+import Button from "@/components/ui/Button";
 
 const LOGO_SRC = "/upload/bg_logo.png";
 const BG_SRC = "/upload/login_bg.jpg";
@@ -184,12 +185,13 @@ localStorage.setItem(
 
             {error && <p className="text-sm text-rose-600">{error}</p>}
 
-            <button
+            <Button
               type="submit"
-              className="w-full py-3.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all text-sm tracking-wide"
+              size="md"
+              className="w-full py-3.5 tracking-wide shadow-md hover:shadow-lg"
             >
               Log in
-            </button>
+            </Button>
           </form>
         </div>
       </div>

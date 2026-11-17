@@ -2,11 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import Panel from "@/components/ui/Panel";
+import Button from "@/components/ui/Button";
+import { useCustomers } from "@/context/CustomerContext";
 import { newCustomerDefaults } from "@/data/customers";
 
 export default function AddCustomerPage() {
+  const router = useRouter();
+  const { addCustomer, showToast } = useCustomers();
   const [fullName, setFullName] = useState(newCustomerDefaults.fullName);
   const [phoneNumber, setPhoneNumber] = useState(newCustomerDefaults.phoneNumber);
   const [email, setEmail] = useState(newCustomerDefaults.email);
@@ -38,20 +43,91 @@ export default function AddCustomerPage() {
   };
 
   const calculateDaysLeft = (targetDate) => {
-    if (!today) return 0;
+    if (!today) return null;
 
-    const diffTime = targetDate.getTime() - today.getTime();
+    const target = new Date(targetDate);
+    const todayAtStart = new Date(today);
+    target.setHours(0, 0, 0, 0);
+    todayAtStart.setHours(0, 0, 0, 0);
+    const diffTime = target.getTime() - todayAtStart.getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays > 0 ? diffDays : 0;
+    return diffDays;
   };
 
   const daysLeft = calculateDaysLeft(expiryDate);
+
+  const handleAddCustomer = () => {
+    if (!fullName.trim() || !phoneNumber.trim() || !email.trim() || !startDate) {
+      showToast("Could not save customer", "Please complete all customer details.", "error");
+      return;
+    }
+
+    const start = new Date(`${startDate}T00:00:00`);
+    const expiry = getCalculatedExpiry(startDate, Number(duration));
+    if (Number.isNaN(start.getTime()) || Number.isNaN(expiry.getTime())) {
+      showToast("Could not save customer", "Please enter a valid subscription start date.", "error");
+      return;
+    }
+
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    expiry.setHours(0, 0, 0, 0);
+    const remainingDays = Math.ceil((expiry - now) / (1000 * 60 * 60 * 24));
+    const status =
+      remainingDays <= 0 ? "Expired" : remainingDays <= 10 ? "Expiring soon" : "Active";
+    const nameParts = fullName.trim().split(/\s+/);
+    const initials = nameParts
+      .slice(0, 2)
+      .map((part) => part[0])
+      .join("")
+      .toUpperCase();
+    const expiresISO = [
+      expiry.getFullYear(),
+      String(expiry.getMonth() + 1).padStart(2, "0"),
+      String(expiry.getDate()).padStart(2, "0"),
+    ].join("-");
+
+    const added = addCustomer({
+      id: globalThis.crypto?.randomUUID?.() ?? `customer-${Date.now()}`,
+      initials,
+      name: fullName.trim(),
+      phone: phoneNumber.trim(),
+      email: email.trim(),
+      startDate: formatDateString(start),
+      duration: Number(duration),
+      expires: formatDateString(expiry),
+      expiryDate: expiresISO,
+      daysLeft: remainingDays,
+      status,
+      badgeColor:
+        status === "Expired"
+          ? "bg-rose-50 text-rose-700 border border-rose-200"
+          : status === "Expiring soon"
+            ? "bg-amber-100 text-amber-800 border border-amber-200"
+            : "bg-emerald-50 text-emerald-700 border border-emerald-200",
+      ...(status === "Expired" ? { expiredOn: formatDateString(expiry) } : {}),
+      badge:
+        status === "Active"
+          ? "Active"
+          : status === "Expired"
+            ? `${Math.abs(remainingDays)} days ago`
+            : `${remainingDays} days left`,
+      ...(remainingDays > 0 && remainingDays <= 10
+        ? {
+            category:
+              remainingDays <= 3 ? "1-3" : remainingDays <= 7 ? "4-7" : "8-10",
+          }
+        : {}),
+    });
+
+    if (added) router.push("/customers");
+  };
 
   return (
     <DashboardLayout>
 
       {/* ---------------- MAIN CONTENT ---------------- */}
-      <main className="flex-1 p-8 overflow-y-auto space-y-6">
+      <main className="flex-1 p-4 pb-24 sm:p-6 md:p-8 md:pb-8 overflow-y-auto space-y-6">
         {/* Back Link */}
         <Link href="/customers" className="inline-flex items-center gap-2 text-xs font-semibold text-indigo-600 hover:text-indigo-500 transition-colors">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
@@ -201,16 +277,13 @@ export default function AddCustomerPage() {
 
             {/* Action Buttons */}
             <div className="flex justify-end gap-3 pt-4">
-              <Link href="/customers" className="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs hover:bg-slate-50 transition-colors">
+              <Button href="/customers" variant="secondary" size="sm" className="px-5 py-2.5">
                 Cancel
-              </Link>
-              <button
-                type="button"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-xs hover:bg-indigo-700 shadow-xs transition-colors"
-              >
+              </Button>
+              <Button size="sm" className="px-5 py-2.5" onClick={handleAddCustomer}>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/></svg>
                 Add Customer
-              </button>
+              </Button>
             </div>
           </Panel>
 
@@ -239,9 +312,27 @@ export default function AddCustomerPage() {
 
             <div className="flex items-center justify-between pt-2">
               <span className="text-xs text-slate-500 font-medium">Status after saving</span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                Active · {daysLeft} days left
+              <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${
+                daysLeft === null || daysLeft > 10
+                  ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                  : daysLeft > 0
+                    ? "bg-amber-50 text-amber-700 border-amber-200"
+                    : "bg-rose-50 text-rose-700 border-rose-200"
+              }`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${
+                  daysLeft === null || daysLeft > 10
+                    ? "bg-emerald-500"
+                    : daysLeft > 0
+                      ? "bg-amber-500"
+                      : "bg-rose-500"
+                }`}></span>
+                {daysLeft === null
+                  ? "Calculating status"
+                  : daysLeft <= 0
+                    ? `Expired · ${Math.abs(daysLeft)} days ago`
+                    : daysLeft <= 10
+                      ? `Expiring soon · ${daysLeft} days left`
+                      : `Active · ${daysLeft} days left`}
               </span>
             </div>
           </div>

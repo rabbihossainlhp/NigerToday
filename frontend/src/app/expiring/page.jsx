@@ -7,24 +7,34 @@ import CustomerAvatar from "@/components/ui/CustomerAvatar";
 import SearchInput from "@/components/ui/SearchInput";
 import StatusBadge from "@/components/ui/StatusBadge";
 import SendReminderButton from "@/components/ui/SendReminderButton";
+import Button from "@/components/ui/Button";
 import { useCustomers } from "@/context/CustomerContext";
-import { expiringCustomers, filterCustomers } from "@/data/customers";
+import { filterCustomers } from "@/data/customers";
 import RenewalModal from "@/components/ui/RenewalModal";
 import ReminderModal from "@/components/ui/ReminderModal";
 
 export default function ExpiringSoonPage() {
-  const { showToast, renewCustomer } = useCustomers();
+  const { customers, showToast, renewCustomer } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [modal, setModal] = useState(null);
   const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const expiringCustomers = customers.filter(
+    (customer) => customer.status === "Expiring soon",
+  );
   const filteredCustomers = filterCustomers(
     expiringCustomers.filter((customer) =>
       activeTab === "all" ? true : customer.category === activeTab,
     ),
     searchQuery,
   );
+  const categoryCounts = {
+    all: expiringCustomers.length,
+    "1-3": expiringCustomers.filter((customer) => customer.category === "1-3").length,
+    "4-7": expiringCustomers.filter((customer) => customer.category === "4-7").length,
+    "8-10": expiringCustomers.filter((customer) => customer.category === "8-10").length,
+  };
 
   return (
     <DashboardLayout>
@@ -35,7 +45,7 @@ export default function ExpiringSoonPage() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">Expiring Soon</h1>
-            <p className="text-xs text-slate-500 mt-1">4 subscriptions expire within the next 10 days</p>
+            <p className="text-xs text-slate-500 mt-1">{expiringCustomers.length} subscriptions expire within the next 10 days</p>
           </div>
 
           <div className="relative w-full md:w-auto">
@@ -51,46 +61,38 @@ export default function ExpiringSoonPage() {
 
         {/* Filter Pills / Tabs - Horizontal scroll on mobile */}
         <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
-          <button
+          <Button
             onClick={() => setActiveTab("all")}
-            className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
-              activeTab === "all"
-                ? "bg-[#5b45e0] text-white shadow-sm"
-                : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50"
-            }`}
+            variant={activeTab === "all" ? "brand" : "filter"}
+            size="pill"
+            className="whitespace-nowrap"
           >
-            All <span className="ml-1 opacity-80">4</span>
-          </button>
-          <button
+            All <span className="ml-1 opacity-80">{categoryCounts.all}</span>
+          </Button>
+          <Button
             onClick={() => setActiveTab("1-3")}
-            className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
-              activeTab === "1-3"
-                ? "bg-[#5b45e0] text-white shadow-sm"
-                : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50"
-            }`}
+            variant={activeTab === "1-3" ? "brand" : "filter"}
+            size="pill"
+            className="whitespace-nowrap"
           >
-            1–3 days <span className="ml-1 opacity-80">1</span>
-          </button>
-          <button
+            1–3 days <span className="ml-1 opacity-80">{categoryCounts["1-3"]}</span>
+          </Button>
+          <Button
             onClick={() => setActiveTab("4-7")}
-            className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
-              activeTab === "4-7"
-                ? "bg-[#5b45e0] text-white shadow-sm"
-                : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50"
-            }`}
+            variant={activeTab === "4-7" ? "brand" : "filter"}
+            size="pill"
+            className="whitespace-nowrap"
           >
-            4–7 days <span className="ml-1 opacity-80">1</span>
-          </button>
-          <button
+            4–7 days <span className="ml-1 opacity-80">{categoryCounts["4-7"]}</span>
+          </Button>
+          <Button
             onClick={() => setActiveTab("8-10")}
-            className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
-              activeTab === "8-10"
-                ? "bg-[#5b45e0] text-white shadow-sm"
-                : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50"
-            }`}
+            variant={activeTab === "8-10" ? "brand" : "filter"}
+            size="pill"
+            className="whitespace-nowrap"
           >
-            8–10 days <span className="ml-1 opacity-80">2</span>
-          </button>
+            8–10 days <span className="ml-1 opacity-80">{categoryCounts["8-10"]}</span>
+          </Button>
         </div>
 
         {/* ================= DESKTOP TABLE (Hidden on Mobile) ================= */}
@@ -113,7 +115,7 @@ export default function ExpiringSoonPage() {
                       <td className="py-4 px-3 flex items-center gap-3">
                         <CustomerAvatar initials={c.initials} />
                         <div>
-                          <Link href={`/customers/${c.initials.toLowerCase()}`} className="font-semibold text-slate-900 hover:text-indigo-600 transition-colors">
+                          <Link href={`/customers/${c.id}`} className="font-semibold text-slate-900 hover:text-indigo-600 transition-colors">
                             {c.name}
                           </Link>
                           <p className="text-[11px] text-slate-400">{c.email}</p>
@@ -126,9 +128,9 @@ export default function ExpiringSoonPage() {
                       </td>
                       <td className="py-4 px-3 text-right space-x-2">
                         <SendReminderButton onClick={() => { setSelectedCustomer(c); setModal("reminder"); }} />
-                        <button onClick={() => { setSelectedCustomer(c); setModal("renew"); }} className="px-3 py-1.5 rounded-xl bg-indigo-600 text-white font-semibold text-xs hover:bg-indigo-700 transition-colors">
+                        <Button size="sm" onClick={() => { setSelectedCustomer(c); setModal("renew"); }}>
                           Renew
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                   ))
@@ -154,7 +156,7 @@ export default function ExpiringSoonPage() {
                   <div className="flex items-center gap-3">
                     <CustomerAvatar initials={c.initials} />
                     <div>
-                      <Link href={`/customers/${c.initials.toLowerCase()}`} className="font-bold text-slate-900 text-sm hover:text-indigo-600">
+                      <Link href={`/customers/${c.id}`} className="font-bold text-slate-900 text-sm hover:text-indigo-600">
                         {c.name}
                       </Link>
                       <p className="text-[11px] text-slate-500 mt-0.5">Expires {c.expires}</p>
@@ -165,21 +167,25 @@ export default function ExpiringSoonPage() {
                 
                 {/* Bottom Row: Actions */}
                 <div className="flex items-center justify-end gap-2 pt-3 border-t border-slate-100">
-                  <button 
+                  <Button
+                    variant="soft"
+                    size="sm"
                     onClick={() => { setSelectedCustomer(c); setModal("reminder"); }} 
-                    className="flex-1 px-3 py-2 rounded-xl bg-[#f0f0fc] text-[#5b45e0] font-semibold text-xs flex items-center justify-center gap-1.5"
+                    className="flex-1 px-3 py-2"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
                     Send Reminder
-                  </button>
-                  <button 
+                  </Button>
+                  <Button
+                    variant="brand"
+                    size="sm"
                     onClick={() => { setSelectedCustomer(c); setModal("renew"); }} 
-                    className="flex-1 px-3 py-2 rounded-xl bg-[#5b45e0] text-white font-semibold text-xs"
+                    className="flex-1 px-3 py-2"
                   >
                     Renew
-                  </button>
+                  </Button>
                 </div>
               </div>
             ))

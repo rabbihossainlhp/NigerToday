@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCustomers } from "@/context/CustomerContext";
 import { AUTH_CHANGED_EVENT, AUTH_STORAGE_KEY } from "@/components/auth/AuthGuard";
+import Button from "@/components/ui/Button";
 
 const LOGO_SRC = "/upload/bg_logo.png";
 
@@ -54,7 +55,7 @@ function NavigationIcon({ name, active }) {
 
   if (name === "more") {
     return (
-      <svg className={`h-5 w-5 ${active ? "text-indigo-600" : "text-slate-400"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className={`h-5 w-5 ${active ? "text-indigo-600" : "text-slate-400"}`} fill="red" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     );
@@ -77,6 +78,17 @@ export default function Sidebar() {
   const expiredCount = customers.filter((c) => c.status === "Expired").length;
 
   const isMoreActive = pathname === "/expired" || pathname === "/settings";
+
+  useEffect(() => {
+    if (!isMoreMenuOpen) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setIsMoreMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isMoreMenuOpen]);
 
   const handleLogout = () => {
     setIsMoreMenuOpen(false);
@@ -131,7 +143,7 @@ export default function Sidebar() {
                   </span>
 
                   {count > 0 && (
-                    <span className="rounded-full bg-amber-500 px-2 py-0.5 text-xs font-bold text-white">
+                    <span className={`rounded-full ${item.href === "/expired"?  "bg-rose-500": " bg-amber-500"} px-2 py-0.5 text-xs font-bold text-white`}>
                       {count}
                     </span>
                   )}
@@ -154,8 +166,10 @@ export default function Sidebar() {
           </div>
 
           <button
+            type="button"
             onClick={handleLogout}
             title="Logout"
+            aria-label="Log out"
             className="p-2 text-slate-400 hover:text-rose-600 transition-colors rounded-lg hover:bg-rose-50"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -166,11 +180,12 @@ export default function Sidebar() {
       </aside>
 
       {/* ---------------- MOBILE BOTTOM NAVIGATION BAR ---------------- */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 px-6 py-2.5 flex items-center justify-between shadow-lg">
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 grid grid-cols-4 gap-1 bg-white border-t border-slate-200 px-2 pt-2 pb-[calc(0.625rem+env(safe-area-inset-bottom))] shadow-lg sm:px-6">
         <Link
           href="/dashboard"
           onClick={() => setIsMoreMenuOpen(false)}
-          className={`flex flex-col items-center gap-1 text-[11px] font-medium transition-colors ${
+          aria-current={pathname === "/dashboard" ? "page" : undefined}
+          className={`flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${
             pathname === "/dashboard" ? "text-indigo-600 font-bold" : "text-slate-500"
           }`}
         >
@@ -181,7 +196,8 @@ export default function Sidebar() {
         <Link
           href="/customers"
           onClick={() => setIsMoreMenuOpen(false)}
-          className={`flex flex-col items-center gap-1 text-[11px] font-medium transition-colors ${
+          aria-current={pathname.startsWith("/customers") ? "page" : undefined}
+          className={`flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${
             pathname.startsWith("/customers") ? "text-indigo-600 font-bold" : "text-slate-500"
           }`}
         >
@@ -192,7 +208,8 @@ export default function Sidebar() {
         <Link
           href="/expiring"
           onClick={() => setIsMoreMenuOpen(false)}
-          className={`flex flex-col items-center gap-1 text-[11px] font-medium transition-colors relative ${
+          aria-current={pathname === "/expiring" ? "page" : undefined}
+          className={`relative flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${
             pathname === "/expiring" ? "text-indigo-600 font-bold" : "text-slate-500"
           }`}
         >
@@ -208,8 +225,12 @@ export default function Sidebar() {
         </Link>
 
         <button
+          type="button"
           onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
-          className={`flex flex-col items-center gap-1 text-[11px] font-medium transition-colors ${
+          aria-expanded={isMoreMenuOpen}
+          aria-controls="mobile-more-menu"
+          aria-haspopup="dialog"
+          className={`flex min-h-12 w-full min-w-0 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors ${
             isMoreActive || isMoreMenuOpen ? "text-indigo-600 font-bold" : "text-slate-500"
           }`}
         >
@@ -221,11 +242,19 @@ export default function Sidebar() {
       {/* ---------------- MOBILE "MORE" POPUP DRAWER ---------------- */}
       {isMoreMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex flex-col justify-end">
-          <div className="bg-white rounded-t-3xl p-6 space-y-4 shadow-2xl animate-in slide-in-from-bottom duration-200">
+          <button
+            type="button"
+            aria-label="Close more navigation"
+            onClick={() => setIsMoreMenuOpen(false)}
+            className="absolute inset-0 h-full w-full cursor-default"
+          />
+          <div id="mobile-more-menu" role="dialog" aria-modal="true" aria-label="More navigation" className="relative z-10 max-h-[85dvh] overflow-y-auto bg-white rounded-t-3xl p-5 sm:p-6 space-y-4 shadow-2xl animate-in slide-in-from-bottom duration-200">
             <div className="flex items-center justify-between pb-2 border-b border-slate-100">
               <h3 className="text-sm font-bold text-slate-900">More Navigation</h3>
               <button
+                type="button"
                 onClick={() => setIsMoreMenuOpen(false)}
+                aria-label="Close more navigation"
                 className="text-slate-400 hover:text-slate-600 text-sm font-bold p-1"
               >
                 ✕
@@ -272,12 +301,13 @@ export default function Sidebar() {
                 </div>
               </div>
 
-              <button
+              <Button
+                variant="danger-secondary"
+                size="sm"
                 onClick={handleLogout}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-rose-200 bg-rose-50 text-rose-600 font-semibold text-xs"
               >
                 Logout
-              </button>
+              </Button>
             </div>
           </div>
         </div>

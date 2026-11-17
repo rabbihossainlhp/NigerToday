@@ -6,18 +6,20 @@ import DashboardLayout from "@/components/layout/DashboardLayout";
 import CustomerAvatar from "@/components/ui/CustomerAvatar";
 import SearchInput from "@/components/ui/SearchInput";
 import StatusBadge from "@/components/ui/StatusBadge";
-import { expiredCustomers, filterCustomers } from "@/data/customers";
+import Button from "@/components/ui/Button";
+import { filterCustomers } from "@/data/customers";
 import { useCustomers } from "@/context/CustomerContext";
 import RenewalModal from "@/components/ui/RenewalModal";
 import ReminderModal from "@/components/ui/ReminderModal";
 import { RefreshCw, MessageCircle } from "lucide-react";
 
 export default function ExpiredPage() {
-  const { showToast, renewCustomer } = useCustomers();
+  const { customers, showToast, renewCustomer } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [modal, setModal] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
 
+  const expiredCustomers = customers.filter((customer) => customer.status === "Expired");
   const filteredCustomers = filterCustomers(expiredCustomers, searchQuery);
 
   return (
@@ -30,7 +32,7 @@ export default function ExpiredPage() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">Expired</h1>
-            <p className="text-xs text-slate-500 mt-1">2 subscriptions have expired · Renew them or follow up</p>
+            <p className="text-xs text-slate-500 mt-1">{expiredCustomers.length} subscriptions have expired · Renew them or follow up</p>
           </div>
 
           {/* Ensure Search takes full width on mobile */}
@@ -54,12 +56,12 @@ export default function ExpiredPage() {
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {filteredCustomers.length > 0 ? (
-                  filteredCustomers.map((c, i) => (
-                    <tr key={i} className="hover:bg-slate-50/60 transition-colors">
+                  filteredCustomers.map((c) => (
+                    <tr key={c.id} className="hover:bg-slate-50/60 transition-colors">
                       <td className="py-4 px-3 flex items-center gap-3">
                         <CustomerAvatar initials={c.initials} />
                         <div>
-                          <Link href={`/customers/${c.initials.toLowerCase()}`} className="font-semibold text-slate-900 hover:text-indigo-600 transition-colors">
+                          <Link href={`/customers/${c.id}`} className="font-semibold text-slate-900 hover:text-indigo-600 transition-colors">
                             {c.name}
                           </Link>
                           <p className="text-[11px] text-slate-400">{c.email}</p>
@@ -71,13 +73,13 @@ export default function ExpiredPage() {
                         <StatusBadge className="bg-rose-50 text-rose-700 border-rose-200" dot>{c.badge}</StatusBadge>
                       </td>
                       <td className="py-4 px-3 text-right space-x-2">
-                        <button onClick={() => { setSelectedCustomer(c); setModal("renew"); }} className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs transition-colors shadow-sm">
+                        <Button size="sm" onClick={() => { setSelectedCustomer(c); setModal("renew"); }}>
                           <RefreshCw size={14} />
                           Renew
-                        </button>
-                        <button onClick={() => { setSelectedCustomer(c); setModal("reminder"); }} className="px-3.5 py-1.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs hover:bg-slate-50 transition-colors">
+                        </Button>
+                        <Button variant="secondary" size="sm" onClick={() => { setSelectedCustomer(c); setModal("reminder"); }}>
                           Message
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                   ))
@@ -96,15 +98,15 @@ export default function ExpiredPage() {
         {/* ================= MOBILE CARDS (Hidden on Desktop) ================= */}
         <div className="md:hidden space-y-3">
           {filteredCustomers.length > 0 ? (
-            filteredCustomers.map((c, i) => (
-              <div key={i} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-4">
+            filteredCustomers.map((c) => (
+              <div key={c.id} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-4">
                 
                 {/* Top Row: Avatar, Info, Badge */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <CustomerAvatar initials={c.initials} />
                     <div>
-                      <Link href={`/customers/${c.initials.toLowerCase()}`} className="font-bold text-slate-900 text-sm hover:text-indigo-600">
+                      <Link href={`/customers/${c.id}`} className="font-bold text-slate-900 text-sm hover:text-indigo-600">
                         {c.name}
                       </Link>
                       <p className="text-[11px] text-slate-500 mt-0.5">Expired {c.expiredOn}</p>
@@ -115,18 +117,22 @@ export default function ExpiredPage() {
                 
                 {/* Bottom Row: Actions */}
                 <div className="flex items-center justify-end gap-2 pt-3 border-t border-slate-100">
-                  <button 
+                  <Button
+                    variant="brand"
+                    size="sm"
                     onClick={() => { setSelectedCustomer(c); setModal("renew"); }} 
-                    className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#5b45e0] text-white font-semibold text-xs"
+                    className="flex-1 px-3 py-2"
                   >
                     <RefreshCw size={14} /> Renew
-                  </button>
-                  <button 
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    size="sm"
                     onClick={() => { setSelectedCustomer(c); setModal("reminder"); }} 
-                    className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 font-semibold text-xs"
+                    className="flex-1 px-3 py-2"
                   >
                     <MessageCircle size={14} /> Message
-                  </button>
+                  </Button>
                 </div>
               </div>
             ))

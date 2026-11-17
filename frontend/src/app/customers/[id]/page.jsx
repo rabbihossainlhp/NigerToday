@@ -1,40 +1,118 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
+import { useParams, useRouter } from "next/navigation";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import CustomerAvatar from "@/components/ui/CustomerAvatar";
-import { customerDetails } from "@/data/customers";
+import Button from "@/components/ui/Button";
 import { useCustomers } from "@/context/CustomerContext";
 import ReminderModal from "@/components/ui/ReminderModal";
 import RenewalModal from "@/components/ui/RenewalModal";
 import { ArrowLeft, RefreshCw, MessageCircle, Edit, Trash2, X, Copy, Check } from "lucide-react";
 
-export default function CustomerDetailsPage({ params }) {
-  // CRITICAL FIX: Added deleteCustomer here
-  const { showToast, renewCustomer, deleteCustomer } = useCustomers();
+function CustomerDetailsContent() {
+  const { customers, showToast, renewCustomer, deleteCustomer } = useCustomers();
+  const routeParams = useParams();
+  const router = useRouter();
   const [copiedField, setCopiedField] = useState(null);
 
   const [isRenewModalOpen, setIsRenewModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isReminderModalOpen, setIsReminderModalOpen] = useState(false);
-  const [renewalDuration, setRenewalDuration] = useState(3);
+  const customerRecord = customers.find(
+    (item) =>
+      item.id === routeParams.id ||
+      item.initials?.toLowerCase() === String(routeParams.id).toLowerCase(),
+  );
+  const startDate = customerRecord?.startDate || "—";
+  const expiryYear =
+    customerRecord?.expires?.match?.(/\d{4}/)?.[0] ||
+    startDate.match(/\d{4}/)?.[0] ||
+    new Date().getFullYear();
+  const expiryValue = customerRecord?.expiryDate || customerRecord?.expires;
+  const expiryDate = /^\d{4}-\d{2}-\d{2}$/.test(expiryValue || "")
+    ? new Date(
+        Number(expiryValue.slice(0, 4)),
+        Number(expiryValue.slice(5, 7)) - 1,
+        Number(expiryValue.slice(8, 10)),
+      )
+    : new Date(`${expiryValue}, ${expiryYear}`);
+  const expiresDate = Number.isNaN(expiryDate.getTime())
+    ? customerRecord?.expires || "—"
+    : expiryDate.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      });
+  const daysLeft =
+    customerRecord?.daysLeft ??
+    (Number.isNaN(expiryDate.getTime())
+      ? 0
+      : Math.ceil((expiryDate.setHours(0, 0, 0, 0) - new Date().setHours(0, 0, 0, 0)) / 86400000));
+  const rawDuration = customerRecord?.duration;
+  const duration = rawDuration
+    ? Number.isFinite(Number(rawDuration))
+      ? `${rawDuration} months`
+      : String(rawDuration).replace(/\s*mo$/, " months")
+    : "—";
+  const statusClasses =
+    customerRecord?.status === "Expired"
+      ? "bg-rose-50 text-rose-700 border-rose-200"
+      : customerRecord?.status === "Active"
+        ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+        : "bg-amber-50 text-amber-700 border-amber-100";
+  const statusDotClasses =
+    customerRecord?.status === "Expired"
+      ? "bg-rose-500"
+      : customerRecord?.status === "Active"
+        ? "bg-emerald-500"
+        : "bg-amber-500";
+  const customer = customerRecord
+    ? {
+        ...customerRecord,
+        customerSince: startDate,
+        startDate,
+        expiresDate,
+        duration,
+        daysLeft,
+        statusBadge:
+          customerRecord.status === "Expiring soon"
+            ? `Expiring · ${customerRecord.badge}`
+            : customerRecord.status === "Expired"
+              ? `Expired · ${customerRecord.badge}`
+              : customerRecord.status,
+        renewals: customerRecord.renewals || [],
+      }
+    : null;
 
-  const customer = customerDetails;
+  const copyToClipboard = async (text, field) => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      showToast("Could not copy details", "Please copy the selected text manually.", "error");
+      return;
+    }
 
-  const calculateNewExpiry = (baseDateStr, months) => {
-    const date = new Date(baseDateStr);
-    date.setMonth(date.getMonth() + months);
-    return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-  };
-
-  const newExpiryDate = calculateNewExpiry("Oct 8, 2026", renewalDuration);
-
-  const copyToClipboard = (text, field) => {
-    navigator.clipboard.writeText(text);
     setCopiedField(field);
     setTimeout(() => setCopiedField(null), 2000);
   };
+
+  if (!customer) {
+    return (
+      <DashboardLayout>
+        <main className="flex-1 p-4 pb-24 sm:p-6 md:p-8 md:pb-8">
+          <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center">
+            <h1 className="text-lg font-bold text-slate-900">Customer not found</h1>
+            <p className="mt-2 text-sm text-slate-500">This customer may have been removed.</p>
+            <Button href="/customers" variant="secondary" className="mt-5">
+              Back to customers
+            </Button>
+          </div>
+        </main>
+      </DashboardLayout>
+    );
+  }
 
   return (
     <DashboardLayout>
@@ -56,8 +134,8 @@ export default function CustomerDetailsPage({ params }) {
           <div className="min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <h1 className="text-lg font-extrabold text-slate-900 truncate">{customer.name}</h1>
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-100">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold border ${statusClasses}`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${statusDotClasses}`}></span>
                 {customer.statusBadge}
               </span>
             </div>
@@ -71,8 +149,8 @@ export default function CustomerDetailsPage({ params }) {
             <div>
               <div className="flex items-center gap-3">
                 <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">{customer.name}</h1>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold border ${statusClasses}`}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${statusDotClasses}`}></span>
                   {customer.statusBadge}
                 </span>
               </div>
@@ -81,21 +159,23 @@ export default function CustomerDetailsPage({ params }) {
           </div>
 
           <div className="flex items-center gap-2.5">
-            <button className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 font-semibold text-xs hover:bg-slate-50 shadow-sm transition-colors">
+            <Button variant="secondary" size="sm">
               <Edit size={14} /> Edit
-            </button>
-            <button
+            </Button>
+            <Button
+              variant="soft"
+              size="sm"
               onClick={() => setIsReminderModalOpen(true)}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#f0f0fc] text-[#5b45e0] font-semibold text-xs hover:bg-[#e0e0fa] transition-colors"
             >
               <MessageCircle size={14} /> Send Reminder
-            </button>
-            <button
+            </Button>
+            <Button
+              variant="brand"
+              size="sm"
               onClick={() => setIsRenewModalOpen(true)}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#5b45e0] hover:bg-[#4a36c4] text-white font-semibold text-xs shadow-sm transition-colors"
             >
               <RefreshCw size={14} /> Renew Subscription
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -128,23 +208,27 @@ export default function CustomerDetailsPage({ params }) {
 
         {/* ===== MOBILE: Action buttons ===== */}
         <div className="md:hidden space-y-3">
-          <button
+          <Button
+            variant="brand"
+            size="lg"
             onClick={() => setIsRenewModalOpen(true)}
-            className="w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-[#5b45e0] text-white font-semibold text-sm shadow-sm transition-colors hover:bg-[#4a36c4]"
+            className="w-full"
           >
             <RefreshCw size={16} /> Renew Subscription
-          </button>
+          </Button>
 
-          <button
+          <Button
+            variant="soft"
+            size="lg"
             onClick={() => setIsReminderModalOpen(true)}
-            className="w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-[#f0f0fc] text-[#5b45e0] font-semibold text-sm border border-[#e0e0fa] transition-colors hover:bg-[#e0e0fa]"
+            className="w-full"
           >
             <MessageCircle size={16} /> Send Reminder
-          </button>
+          </Button>
 
-          <button className="w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-white text-slate-700 font-semibold text-sm border border-slate-200 transition-colors hover:bg-slate-50">
+          <Button variant="secondary" size="lg" className="w-full">
             <Edit size={16} /> Edit customer
-          </button>
+          </Button>
         </div>
 
         {/* ===== DESKTOP CONTENT ===== */}
@@ -226,7 +310,7 @@ export default function CustomerDetailsPage({ params }) {
                       <p className="font-semibold text-slate-900">{customer.phone}</p>
                     </div>
                   </div>
-                  <button onClick={() => copyToClipboard(customer.phone, "phone")} className="text-slate-400 hover:text-slate-600 p-1">
+                  <button type="button" aria-label="Copy phone number" onClick={() => copyToClipboard(customer.phone, "phone")} className="text-slate-400 hover:text-slate-600 p-1">
                     {copiedField === "phone" ? (
                       <span className="text-emerald-600 font-bold text-[10px]">Copied!</span>
                     ) : (
@@ -248,7 +332,7 @@ export default function CustomerDetailsPage({ params }) {
                       <p className="font-semibold text-slate-900">{customer.email}</p>
                     </div>
                   </div>
-                  <button onClick={() => copyToClipboard(customer.email, "email")} className="text-slate-400 hover:text-slate-600 p-1">
+                  <button type="button" aria-label="Copy email address" onClick={() => copyToClipboard(customer.email, "email")} className="text-slate-400 hover:text-slate-600 p-1">
                     {copiedField === "email" ? (
                       <span className="text-emerald-600 font-bold text-[10px]">Copied!</span>
                     ) : (
@@ -266,12 +350,13 @@ export default function CustomerDetailsPage({ params }) {
                   Removes this customer and their subscription records. This cannot be undone.
                 </p>
               </div>
-              <button
+              <Button
+                variant="danger-secondary"
+                size="sm"
                 onClick={() => setIsDeleteModalOpen(true)}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs hover:bg-rose-50 hover:text-rose-600 hover:border-rose-200 shadow-sm transition-colors"
               >
                 <Trash2 size={14} /> Delete customer
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -321,26 +406,38 @@ export default function CustomerDetailsPage({ params }) {
             </p>
 
             <div className="mt-8 flex justify-end gap-3">
-              <button
+              <Button
+                variant="secondary"
+                size="md"
                 onClick={() => setIsDeleteModalOpen(false)}
-                className="rounded-xl border border-slate-200 px-6 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+                className="px-6"
               >
                 Cancel
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="danger"
+                size="md"
                 onClick={() => {
-                  deleteCustomer(customer.id); // Now this will work!
+                  deleteCustomer(customer.id);
                   setIsDeleteModalOpen(false);
-                  showToast("Customer deleted", `${customer.name} has been removed.`);
+                  router.push("/customers");
                 }}
-                className="flex items-center gap-2 rounded-xl bg-[#e11d48] px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#be123c] transition-colors"
+                className="px-6 bg-[#e11d48] hover:bg-[#be123c]"
               >
                 <Trash2 size={16} /> Delete customer
-              </button>
+              </Button>
             </div>
           </div>
         </div>
       )}
     </DashboardLayout>
+  );
+}
+
+export default function CustomerDetailsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
+      <CustomerDetailsContent />
+    </Suspense>
   );
 }

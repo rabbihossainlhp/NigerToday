@@ -1,15 +1,32 @@
 import { useState } from "react";
 import { X, MessageCircle, Copy } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 export default function ReminderModal({ customer, onClose, onConfirm }) {
   const [template, setTemplate] = useState(customer?.daysLeft ? `${customer.daysLeft} days left` : "Expired");
   const [message, setMessage] = useState(() => createMessage(customer, template));
+  const [copyError, setCopyError] = useState("");
 
   if (!customer) return null;
 
   function selectTemplate(option) {
     setTemplate(option);
     setMessage(createMessage(customer, option));
+    setCopyError("");
+  }
+
+  async function copyMessage() {
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("Clipboard access is unavailable.");
+      }
+      await navigator.clipboard.writeText(message);
+    } catch {
+      setCopyError("Could not copy the message. Please copy it manually.");
+      return;
+    }
+
+    onConfirm(message);
   }
 
   return (
@@ -26,7 +43,7 @@ export default function ReminderModal({ customer, onClose, onConfirm }) {
               <p className="text-sm text-slate-500">{customer.name} · {customer.phone}</p>
             </div>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+          <button type="button" aria-label="Close reminder dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
             <X size={20} />
           </button>
         </div>
@@ -61,23 +78,26 @@ export default function ReminderModal({ customer, onClose, onConfirm }) {
           />
         </div>
 
+        {copyError && <p role="alert" className="mt-3 text-sm text-rose-600">{copyError}</p>}
+
         {/* Footer Actions */}
         <div className="mt-8 flex justify-end gap-3">
-          <button
+          <Button
+            variant="secondary"
+            size="md"
             onClick={onClose}
-            className="rounded-xl border border-slate-200 px-6 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+            className="px-6"
           >
             Cancel
-          </button>
-          <button
-            onClick={() => {
-              navigator.clipboard?.writeText(message);
-              onConfirm(message);
-            }}
-            className="flex items-center gap-2 rounded-xl bg-[#5b45e0] px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#4a36c4] transition-colors"
+          </Button>
+          <Button
+            variant="brand"
+            size="md"
+            onClick={copyMessage}
+            className="px-6"
           >
             <Copy size={16} /> Copy message
-          </button>
+          </Button>
         </div>
       </div>
     </div>

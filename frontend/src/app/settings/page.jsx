@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import Panel from "@/components/ui/Panel";
+import Button from "@/components/ui/Button";
 
 export default function SettingsPage() {
   const [name, setName] = useState("Alex Owner");
@@ -18,7 +18,7 @@ export default function SettingsPage() {
     <DashboardLayout>
 
       {/* ---------------- MAIN CONTENT ---------------- */}
-      <main className="flex-1 p-8 space-y-6 overflow-y-auto max-w-4xl">
+      <main className="flex-1 p-4 pb-24 sm:p-6 md:p-8 md:pb-8 space-y-6 overflow-y-auto max-w-4xl">
         {/* Header */}
         <div>
           <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">Settings</h1>
@@ -55,9 +55,9 @@ export default function SettingsPage() {
             </div>
 
             <div className="flex justify-end pt-2">
-              <button className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs transition-colors shadow-xs">
+              <Button size="sm" className="px-5 py-2.5">
                 Save changes
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -71,10 +71,10 @@ export default function SettingsPage() {
                 <p className="text-xs text-slate-500 mt-0.5">Use a strong password that only you know.</p>
               </div>
 
-              <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-semibold text-xs hover:bg-slate-50 transition-colors shadow-xs shrink-0">
+              <Button variant="secondary" size="sm" className="shrink-0">
                 <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                 Change password
-              </button>
+              </Button>
             </div>
           </div>
 

@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Sidebar from "@/components/layout/Sidebar";
+import DashboardLayout from "@/components/layout/DashboardLayout";
+import Button from "@/components/ui/Button";
 import { useCustomers } from "@/context/CustomerContext";
 import RenewalModal from "@/components/ui/RenewalModal";
 import ReminderModal from "@/components/ui/ReminderModal";
@@ -14,10 +15,10 @@ export default function CustomersPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filtered = customers.filter((c) => {
-    const matchesSearch =
-      c.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      c.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      c.phone.includes(searchQuery);
+    const query = searchQuery.trim().toLowerCase();
+    const matchesSearch = [c.name, c.email, c.phone]
+      .filter(Boolean)
+      .some((value) => value.toLowerCase().includes(query));
 
     if (activeTab === "active") return matchesSearch && c.status === "Active";
     if (activeTab === "expiring") return matchesSearch && c.status === "Expiring soon";
@@ -45,7 +46,7 @@ export default function CustomersPage() {
       );
     }
     // Expired
-    const daysAgo = c.daysAgo ?? 2; // replace with real calculation
+    const daysAgo = c.daysAgo ?? Math.abs(c.daysLeft ?? 2);
     return (
       <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-rose-50 text-rose-700 border border-rose-100">
         <span className="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
@@ -55,10 +56,8 @@ export default function CustomersPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-50 text-slate-800">
-      <Sidebar />
-
-      <main className="flex-1 p-4 sm:p-6 pb-20 md:p-8 space-y-5 overflow-y-auto">
+    <DashboardLayout>
+      <main className="flex-1 p-4 pb-24 sm:p-6 md:p-8 md:pb-8 space-y-5 overflow-y-auto">
         {/* Header */}
         <div className="flex items-center justify-between gap-3">
           <div>
@@ -70,13 +69,14 @@ export default function CustomersPage() {
             </p>
           </div>
 
-          <Link
+          <Button
             href="/customers/new"
-            className="w-10 h-10 sm:w-auto sm:h-auto sm:px-4 sm:py-2 bg-indigo-600 text-white rounded-full sm:rounded-xl flex items-center justify-center text-lg sm:text-xs font-semibold shadow-sm hover:bg-indigo-700 transition-colors"
+            size="sm"
+            className="h-10 w-10 rounded-full p-0 text-lg transition-none sm:h-auto sm:w-auto sm:rounded-xl sm:px-4 sm:py-2 sm:text-xs"
           >
             <span className="sm:hidden">+</span>
             <span className="hidden sm:inline">+ Add Customer</span>
-          </Link>
+          </Button>
         </div>
 
         {/* Search */}
@@ -109,12 +109,13 @@ export default function CustomersPage() {
                 Add your first customer to start tracking subscriptions and expiry dates.
               </p>
             </div>
-            <Link
+            <Button
               href="/customers/new"
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold shadow-sm"
+              size="sm"
+              className="rounded-lg transition-none"
             >
               + Add Customer
-            </Link>
+            </Button>
           </div>
         ) : (
           <>
@@ -126,17 +127,14 @@ export default function CustomersPage() {
                 { key: "expiring", label: "Expiring" },
                 { key: "expired", label: "Expired" },
               ].map((tab) => (
-                <button
+                <Button
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
-                    activeTab === tab.key
-                      ? "bg-indigo-600 text-white shadow-sm"
-                      : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50"
-                  }`}
+                  variant={activeTab === tab.key ? "filter-active" : "filter"}
+                  size="pill"
                 >
                   {tab.label}
-                </button>
+                </Button>
               ))}
             </div>
 
@@ -216,30 +214,31 @@ export default function CustomersPage() {
                       <td className="py-4 px-4 text-slate-600">{c.expires}</td>
                       <td className="py-4 px-4">{getStatusBadge(c)}</td>
                       <td className="py-4 px-4 text-right space-x-2">
-                        <button
+                        <Button
+                          variant="secondary"
+                          size="sm"
                           onClick={() => {
                             setSelectedCustomer(c);
                             setModal("reminder");
                           }}
-                          className="px-3 py-1.5 rounded-xl border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50"
                         >
                           Message
-                        </button>
-                        <button
+                        </Button>
+                        <Button
+                          size="sm"
                           onClick={() => {
                             setSelectedCustomer(c);
                             setModal("renew");
                           }}
-                          className="px-3 py-1.5 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 shadow-xs"
                         >
                           Renew
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-            </div>
+              </div>
           </>
         )}
       </main>
@@ -264,6 +263,6 @@ export default function CustomersPage() {
           }}
         />
       )}
-    </div>
+    </DashboardLayout>
   );
 }

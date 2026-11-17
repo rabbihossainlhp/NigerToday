@@ -16,8 +16,7 @@ export function CustomerProvider({ children }) {
   const clearToast = () => setToast(null);
 
   const addCustomer = (newCust) => {
-    // Example condition simulating success vs error mock behavior
-    if (!newCust.name) {
+    if (!newCust.name?.trim()) {
       showToast("Could not save customer", "Please check the details and try again.", "error");
       return false;
     }
@@ -32,38 +31,87 @@ export function CustomerProvider({ children }) {
   };
 
   const renewCustomer = (id, additionalMonths) => {
-    let renewedName = "";
-    let newExpiryFormatted = "";
+    const customer = customers.find((item) => item.id === id);
+    if (!customer) {
+      showToast("Could not renew subscription", "The customer could not be found.", "error");
+      return;
+    }
+
+    const expiryYear =
+      customer.expires?.match?.(/\d{4}/)?.[0] ||
+      customer.startDate?.match?.(/\d{4}/)?.[0] ||
+      new Date().getFullYear();
+    const rawExpiry = customer.expiryDate || `${customer.expires}, ${expiryYear}`;
+    const currentExpiry = /^\d{4}-\d{2}-\d{2}$/.test(rawExpiry)
+      ? new Date(
+          Number(rawExpiry.slice(0, 4)),
+          Number(rawExpiry.slice(5, 7)) - 1,
+          Number(rawExpiry.slice(8, 10)),
+        )
+      : new Date(rawExpiry);
+    if (Number.isNaN(currentExpiry.getTime())) {
+      showToast("Could not renew subscription", "The current expiry date is invalid.", "error");
+      return;
+    }
+
+    currentExpiry.setMonth(currentExpiry.getMonth() + additionalMonths);
+    const newExpiresStr = [
+      currentExpiry.getFullYear(),
+      String(currentExpiry.getMonth() + 1).padStart(2, "0"),
+      String(currentExpiry.getDate()).padStart(2, "0"),
+    ].join("-");
+    const newExpiryFormatted = currentExpiry.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    currentExpiry.setHours(0, 0, 0, 0);
+    const daysLeft = Math.ceil((currentExpiry - today) / (1000 * 60 * 60 * 24));
+    const status = daysLeft <= 0 ? "Expired" : daysLeft <= 10 ? "Expiring soon" : "Active";
+    const badge =
+      status === "Active"
+        ? "Active"
+        : status === "Expired"
+          ? `${Math.abs(daysLeft)} days ago`
+          : `${daysLeft} days left`;
+    const category =
+      daysLeft <= 3 ? "1-3" : daysLeft <= 7 ? "4-7" : daysLeft <= 10 ? "8-10" : undefined;
 
     setCustomers((prev) =>
-      prev.map((c) => {
-        if (c.id === id) {
-          renewedName = c.name;
-          const expiryYear = c.expires?.match?.(/\d{4}/)?.[0] || c.startDate?.match?.(/\d{4}/)?.[0] || new Date().getFullYear();
-          const currentExpiry = new Date(`${c.expires}, ${expiryYear}`);
-          if (Number.isNaN(currentExpiry.getTime())) {
-            renewedName = c.name;
-            return c;
-          }
-          currentExpiry.setMonth(currentExpiry.getMonth() + additionalMonths);
-          const newExpiresStr = currentExpiry.toISOString().split("T")[0];
-          newExpiryFormatted = new Date(newExpiresStr).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-          
-          return {
-            ...c,
-            expires: newExpiresStr,
-            expiryDate: newExpiresStr,
-            status: "Active",
-            renewals: [
-              { title: `Renewed for ${additionalMonths} months`, period: `${c.expires} → ${newExpiresStr}` },
-              ...(c.renewals ?? []),
-            ],
-          };
-        }
-        return c;
-      })
+      prev.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              expires: newExpiryFormatted,
+              expiryDate: newExpiresStr,
+              daysLeft,
+              status,
+              badge,
+              badgeColor:
+                status === "Expired"
+                  ? "bg-rose-50 text-rose-700 border border-rose-200"
+                  : status === "Expiring soon"
+                    ? "bg-amber-100 text-amber-800 border border-amber-200"
+                    : "bg-emerald-50 text-emerald-700 border border-emerald-200",
+              ...(category ? { category } : { category: undefined }),
+              renewals: [
+                {
+                  title: `Renewed for ${additionalMonths} months`,
+                  period: `${item.expires} → ${newExpiryFormatted}`,
+                },
+                ...(item.renewals ?? []),
+              ],
+            }
+          : item,
+      ),
     );
-    showToast("Subscription renewed", `${renewedName} - new expiry ${newExpiryFormatted}`, "success");
+    showToast(
+      "Subscription renewed",
+      `${customer.name} - new expiry ${newExpiryFormatted}`,
+      "success",
+    );
   };
 
   return (
