@@ -20,7 +20,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n  \"firstName\": \"Md. Shadat\",\r\n  \"lastName\": \"Hossain\",\r\n  \"email\": \"rabbihossain872006@gmail.com\",\r\n  \"password\": \"123ASDasd\",\r\n  \"role\": \"admin\"\r\n}",
+                  "raw": "{\r\n  \"firstName\": \"Md. \",\r\n  \"lastName\": \"Hossain\",\r\n  \"email\": \"rabbihossain872006@gmail.com\",\r\n  \"password\": \"123ASDasd\",\r\n  \"role\": \"admin\"\r\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -1986,7 +1986,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"fullName\":\"temporfsdfsdfdsary\",\n    \"phone\":\"0123131230\",\n    \"email\":\"teo@gmail.com\",\n    \"startDate\":\"\",\n    \"durationMonts\":\"\",\n    \"expiresAt\":\"\"\n}",
+              "raw": "{\n    \"fullName\":\"saad islam nowvi\",\n    \"phone\":\"0123131230\",\n    \"email\":\"saad@gmail.com\",\n    \"startDate\":\"\",\n    \"durationMonts\":\"\",\n    \"expiresAt\":\"\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2239,11 +2239,21 @@
         {
           "name": "Create Renewal",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"customerId\":\"6af92b74e6aa9fe3de753099\",\n  \"periodStart\": \"2026-03-15T00:00:00.000Z\",\n  \"durationMonths\": 3,\n  \"type\": \"renewal\"\n}\n",
+              "raw": "{\n    \"customerId\":\"6afc24324ea47b761603d64e\",\n  \"periodStart\": \"2026-03-15T00:00:00.000Z\",\n  \"durationMonths\": 3,\n  \"type\": \"renewal\"\n}\n",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2251,14 +2261,54 @@
               }
             },
             "url": {
-              "raw": "{{url}}/api/v1/renewals",
+              "raw": "{{url}}/api/v1/renewals/new",
               "host": [
                 "{{url}}"
               ],
               "path": [
                 "api",
                 "v1",
-                "renewals"
+                "renewals",
+                "new"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Renewal",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"periodEnd\": \"2026-08-15T00:00:00.000Z\"\n\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/renewals/6afc246d4ea47b761603d652",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "renewals",
+                "6afc246d4ea47b761603d652"
               ]
             }
           },
@@ -2322,6 +2372,70 @@
                 "v1",
                 "renewals",
                 "6af92b74e6aa9fe3de753099"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "item": [
+        {
+          "name": "Put Settings",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reminders\": {\n    \"remind7Days\": false,\n    \"remind3Days\": true,\n    \"remind1Day\": true\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/settings",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "settings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get settings",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reminders\": {\n    \"remind7Days\": false,\n    \"remind3Days\": true,\n    \"remind1Day\": true\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/settings",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "settings"
               ]
             }
           },
