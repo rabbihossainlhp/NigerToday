@@ -2344,3 +2344,301 @@
 [[32minfo[39m] Connected to MongoDB
 [[32minfo[39m] Listening to ip http://192.168.0.117:3000
 [[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: You are not authorized
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:12:9
+    at allFailed (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:110:18)
+    at attempt (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:183:28)
+    at strategy.fail (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:305:9)
+    at JwtStrategy.authenticate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:96:21)
+    at attempt (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:369:16)
+    at authenticate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:370:7)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:51:8
+    at new Promise (<anonymous>)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:46:12
+[[31merror[39m] GET /api/v1/renewals/6af92b74e6aa9fe3de753099 401 - 76.974 ms - message: You are not authorized
+[[32minfo[39m] POST /api/v1/auth/login 200 - 303.892 ms
+[[32minfo[39m] GET /api/v1/renewals/6af92b74e6aa9fe3de753099 200 - 297.469 ms
+[[32minfo[39m] GET /api/v1/renewals 200 - 133.301 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] POST /api/v1/customer/create 201 - 222.123 ms
+[[31merror[39m] Error: This API Not found
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/app.js:74:8
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:328:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:280:10)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:646:15
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:265:14)
+[[31merror[39m] POST /api/v1/renewals 404 - 5.156 ms - message: This API Not found
+[[31merror[39m] Error: You are not authorized
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:12:9
+    at allFailed (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:110:18)
+    at attempt (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:183:28)
+    at strategy.fail (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:305:9)
+    at JwtStrategy.authenticate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport-jwt/lib/strategy.js:96:21)
+    at attempt (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:369:16)
+    at authenticate (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/passport/lib/middleware/authenticate.js:370:7)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:51:8
+    at new Promise (<anonymous>)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:46:12
+[[31merror[39m] POST /api/v1/renewals/new 401 - 2.085 ms - message: You are not authorized
+[[32minfo[39m] POST /api/v1/renewals/new 201 - 213.371 ms
+[[31merror[39m] SyntaxError: Expected double-quoted property name in JSON at position 48 (line 4 column 1)
+    at JSON.parse (<anonymous>)
+    at parse (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/body-parser/lib/types/json.js:96:19)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/body-parser/lib/read.js:146:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/raw-body/index.js:238:16)
+    at done (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:514:20)
+    at endReadableNT (node:internal/streams/readable:2147:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[[31merror[39m] PATCH /api/v1/renewals/6afc246d4ea47b761603d652 400 - 7.797 ms - message: Expected double-quoted property name in JSON at position 48 (line 4 column 1)
+[[31merror[39m] PATCH /api/v1/renewals/6afc246d4ea47b761603d652 400 - 43.667 ms - message: -
+[[31merror[39m] ReferenceError: mongoose is not defined
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/renewal.controller.js:90:3
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] ReferenceError: mongoose is not defined
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/renewal.controller.js:90:3
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] PATCH /api/v1/renewals/6afc246d4ea47b761603d652 500 - 63.823 ms - message: mongoose is not defined
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] PATCH /api/v1/renewals/6afc246d4ea47b761603d652 200 - 234.758 ms
+[[32minfo[39m] PATCH /api/v1/renewals/6afc246d4ea47b761603d652 200 - 156.659 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] PATCH /api/v1/renewals/6afc246d4ea47b761603d652 200 - 212.390 ms
+[[32minfo[39m] PATCH /api/v1/renewals/6afc246d4ea47b761603d652 200 - 305.499 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[31merror[39m] Error: Invalid period end date
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/renewal.controller.js:81:11
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/utils/catchAsync.js:2:19
+    at Layer.handle [as handle_request] (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/route.js:149:13)
+    at /home/rabbi/_Dev_Folder/NigerToday/backend/src/middlewares/auth.js:53:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[[31merror[39m] PATCH /api/v1/renewals/6afc246d4ea47b761603d652 400 - 87.877 ms - message: Invalid period end date
+[[32minfo[39m] PATCH /api/v1/renewals/6afc246d4ea47b761603d652 200 - 256.112 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.117:3000
+[[32minfo[39m] Connected to email server

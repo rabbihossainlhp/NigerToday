@@ -1,7 +1,10 @@
 
 const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync");
-const {renewalService} = require("../services");
+const { renewalService } = require("../services");
+const ApiError = require("../utils/ApiError");
+const { Renewal } = require("../models");
+const { default: mongoose } = require("mongoose");
 
 
 
@@ -32,7 +35,7 @@ const createRenewal = catchAsync(async (req, res) => {
 
 
   req.body.periodEnd = endDate;
-  
+
 
   const renewal = await renewalService.createRenewal(req.body);
 
@@ -69,8 +72,33 @@ const getRenewalsByCustomer = catchAsync(async (req, res) => {
   });
 });
 
+
+
+const updateRenewal = catchAsync(async (req, res) => {
+  const { periodEnd } = req.body;
+
+  if (!periodEnd || Number.isNaN(new Date(periodEnd).getTime())) {
+    throw new ApiError(httpStatus.BAD_REQUEST, "Invalid period end date");
+  }
+
+  const updatedRenewal = await renewalService.updateRenewal(
+    req.params.renewalId,
+    new Date(periodEnd),
+  );
+
+  res.status(httpStatus.OK).send({
+    success: true,
+    message: "Renewal updated successfully",
+    data: updatedRenewal,
+  });
+});
+
+
+
+
 module.exports = {
   createRenewal,
   getAllRenewals,
   getRenewalsByCustomer,
+  updateRenewal
 };
