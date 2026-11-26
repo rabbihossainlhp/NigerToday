@@ -3,50 +3,44 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AUTH_CHANGED_EVENT, AUTH_STORAGE_KEY } from "@/components/auth/AuthGuard";
 import Button from "@/components/ui/Button";
+import { authService } from "@/services/authService";
+import { getAuth } from "@/services/apiClient";
 
 const LOGO_SRC = "/upload/bg_logo.png";
 const BG_SRC = "/upload/login_bg.jpg";
-const LOGIN_EMAIL = "owner@email.com";
-const LOGIN_PASSWORD = "owner123";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState(LOGIN_EMAIL);
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-  try {
-    const auth = JSON.parse(localStorage.getItem(AUTH_STORAGE_KEY));
-
-    if (auth?.loggedIn === true) {
+    if (getAuth()?.accessToken) {
       router.replace("/dashboard");
     }
-  } catch {
-    localStorage.removeItem(AUTH_STORAGE_KEY);
-  }
-}, [router]);
+  }, [router]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-if (!email.trim() || !password.trim()) {
-  setError("Email and password are required.");
-  return;
-}
+    if (!email.trim() || !password) {
+      setError("Email and password are required.");
+      return;
+    }
 
-localStorage.setItem(
-  AUTH_STORAGE_KEY,
-  JSON.stringify({
-    email: email.trim(),
-    loggedIn: true,
-  })
-);
-
-    window.dispatchEvent(new Event(AUTH_CHANGED_EVENT));
-    router.replace("/dashboard");
+    setSubmitting(true);
+    setError("");
+    try {
+      await authService.login(email.trim(), password);
+      router.replace("/dashboard");
+    } catch (loginError) {
+      setError(loginError.message);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -147,7 +141,7 @@ localStorage.setItem(
                   </svg>
                 </span>
                 <input
-                  type="text"
+                    type="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   autoComplete="email"
@@ -188,9 +182,10 @@ localStorage.setItem(
             <Button
               type="submit"
               size="md"
+              disabled={submitting}
               className="w-full py-3.5 tracking-wide shadow-md hover:shadow-lg"
             >
-              Log in
+              {submitting ? "Logging in..." : "Log in"}
             </Button>
           </form>
         </div>

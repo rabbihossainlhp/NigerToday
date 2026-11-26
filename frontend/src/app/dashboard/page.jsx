@@ -7,15 +7,34 @@ import StatCard from "@/components/ui/StatCard";
 import Button from "@/components/ui/Button";
 import { useCustomers } from "@/context/CustomerContext";
 import { dashboardStats } from "@/data/customers";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RenewalModal from "@/components/ui/RenewalModal";
 import ReminderModal from "@/components/ui/ReminderModal";
 import { AlertTriangle, MessageCircle, Search } from "lucide-react";
+import { dashboardService } from "@/services/dashboardService";
 
 export default function DashboardPage() {
   const { customers, showToast, renewCustomer } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [modal, setModal] = useState(null);
+  const [remoteStats, setRemoteStats] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+    dashboardService
+      .getStats()
+      .then((result) => {
+        if (active) setRemoteStats(result);
+      })
+      .catch((error) => {
+        if (active) showToast("Could not load dashboard statistics", error.message, "error");
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [showToast]);
+
   const expiringCustomers = customers
     .filter((customer) => customer.status === "Expiring soon")
     .sort((a, b) => a.daysLeft - b.daysLeft);
@@ -35,12 +54,12 @@ export default function DashboardPage() {
     ...stat,
     value:
       stat.label === "Total customers"
-        ? customers.length
+        ? remoteStats?.total ?? customers.length
         : stat.label === "Active"
-          ? activeCount
+          ? remoteStats?.active ?? activeCount
           : stat.label === "Expiring soon"
-            ? expiringCustomers.length
-            : expiredCustomers.length,
+            ? remoteStats?.expiringSoon ?? expiringCustomers.length
+            : remoteStats?.expired ?? expiredCustomers.length,
   }));
 
   return (
@@ -253,9 +272,9 @@ export default function DashboardPage() {
           <RenewalModal 
             customer={selectedCustomer} 
             onClose={() => setModal(null)} 
-            onConfirm={(months) => {
-              renewCustomer(selectedCustomer.id, months);
-              setModal(null);
+            onConfirm={async (months) => {
+              const renewed = await renewCustomer(selectedCustomer.id, months);
+              if (renewed) setModal(null);
             }} 
           />
         )}

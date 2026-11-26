@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import DashboardLayout from "@/components/layout/DashboardLayout";
@@ -10,21 +10,51 @@ import { useCustomers } from "@/context/CustomerContext";
 import ReminderModal from "@/components/ui/ReminderModal";
 import RenewalModal from "@/components/ui/RenewalModal";
 import { ArrowLeft, RefreshCw, MessageCircle, Edit, Trash2, X, Copy, Check } from "lucide-react";
+import { renewalService } from "@/services/renewalService";
+import { customerService } from "@/services/customerService";
 
 function CustomerDetailsContent() {
-  const { customers, showToast, renewCustomer, deleteCustomer } = useCustomers();
+  const { customers, loading, refreshCustomers, showToast, renewCustomer, deleteCustomer } = useCustomers();
   const routeParams = useParams();
   const router = useRouter();
   const [copiedField, setCopiedField] = useState(null);
+  const [renewals, setRenewals] = useState([]);
+  const [renewalsLoading, setRenewalsLoading] = useState(true);
 
   const [isRenewModalOpen, setIsRenewModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isReminderModalOpen, setIsReminderModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isSavingCustomer, setIsSavingCustomer] = useState(false);
+  const [editName, setEditName] = useState("");
+  const [editEmail, setEditEmail] = useState("");
+  const [editPhone, setEditPhone] = useState("");
   const customerRecord = customers.find(
     (item) =>
       item.id === routeParams.id ||
       item.initials?.toLowerCase() === String(routeParams.id).toLowerCase(),
   );
+  const customerId = customerRecord?.id;
+
+  useEffect(() => {
+    if (!customerId) return undefined;
+    let active = true;
+    renewalService
+      .listByCustomer(customerId)
+      .then((records) => {
+        if (active) setRenewals(records);
+      })
+      .catch((error) => {
+        if (active) showToast("Could not load renewal history", error.message, "error");
+      })
+      .finally(() => {
+        if (active) setRenewalsLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [customerId, showToast]);
   const startDate = customerRecord?.startDate || "—";
   const expiryYear =
     customerRecord?.expires?.match?.(/\d{4}/)?.[0] ||
@@ -82,9 +112,61 @@ function CustomerDetailsContent() {
             : customerRecord.status === "Expired"
               ? `Expired · ${customerRecord.badge}`
               : customerRecord.status,
-        renewals: customerRecord.renewals || [],
+        renewals,
       }
     : null;
+
+  const removeRenewal = async (renewalId) => {
+    if (!window.confirm("Delete this renewal record?")) return;
+    try {
+      await renewalService.remove(renewalId);
+    } catch (error) {
+      showToast("Could not delete renewal", error.message, "error");
+      return;
+    }
+
+    setRenewals((records) => records.filter((renewal) => renewal._id !== renewalId));
+    try {
+      await refreshCustomers();
+      showToast("Renewal deleted", "The renewal record was removed.", "success");
+    } catch (error) {
+      showToast(
+        "Renewal deleted",
+        `Customer details could not be reloaded: ${error.message}`,
+        "error",
+      );
+    }
+  };
+
+  const saveCustomer = async (event) => {
+    event.preventDefault();
+    setIsSavingCustomer(true);
+    try {
+      await customerService.update(customer.id, {
+        name: editName.trim(),
+        email: editEmail.trim(),
+        phone: editPhone.trim(),
+      });
+    } catch (error) {
+      showToast("Could not update customer", error.message, "error");
+      setIsSavingCustomer(false);
+      return;
+    }
+
+    setIsEditModalOpen(false);
+    try {
+      await refreshCustomers();
+      showToast("Customer updated", "Customer details were saved.", "success");
+    } catch (error) {
+      showToast(
+        "Customer updated",
+        `The updated details could not be reloaded: ${error.message}`,
+        "error",
+      );
+    } finally {
+      setIsSavingCustomer(false);
+    }
+  };
 
   const copyToClipboard = async (text, field) => {
     try {
@@ -103,8 +185,8 @@ function CustomerDetailsContent() {
       <DashboardLayout>
         <main className="flex-1 p-4 pb-24 sm:p-6 md:p-8 md:pb-8">
           <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center">
-            <h1 className="text-lg font-bold text-slate-900">Customer not found</h1>
-            <p className="mt-2 text-sm text-slate-500">This customer may have been removed.</p>
+            <h1 className="text-lg font-bold text-slate-900">{loading ? "Loading customer..." : "Customer not found"}</h1>
+            {!loading && <p className="mt-2 text-sm text-slate-500">This customer may have been removed.</p>}
             <Button href="/customers" variant="secondary" className="mt-5">
               Back to customers
             </Button>
@@ -159,7 +241,16 @@ function CustomerDetailsContent() {
           </div>
 
           <div className="flex items-center gap-2.5">
-            <Button variant="secondary" size="sm">
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => {
+                setEditName(customer.name);
+                setEditEmail(customer.email);
+                setEditPhone(customer.phone);
+                setIsEditModalOpen(true);
+              }}
+            >
               <Edit size={14} /> Edit
             </Button>
             <Button
@@ -278,17 +369,35 @@ function CustomerDetailsContent() {
                 <p className="text-xs text-slate-400">Every time this subscription was renewed</p>
               </div>
               <div className="space-y-3">
-                {customer.renewals.map((r, i) => (
-                  <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl border border-slate-100 bg-slate-50/50">
-                    <div className="w-7 h-7 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
-                      <Check size={14} strokeWidth={3} />
+                {renewalsLoading ? (
+                  <p className="text-xs text-slate-400">Loading renewal history...</p>
+                ) : customer.renewals.length ? (
+                  customer.renewals.map((renewal) => (
+                    <div key={renewal._id} className="flex items-center gap-3 p-3.5 rounded-xl border border-slate-100 bg-slate-50/50">
+                      <div className="w-7 h-7 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                        <Check size={14} strokeWidth={3} />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-xs font-bold text-slate-800">
+                          {renewal.type === "initial" ? "Initial subscription" : `Renewed for ${renewal.durationMonths} months`}
+                        </p>
+                        <p className="text-[11px] text-slate-400">
+                          {new Date(renewal.periodStart).toLocaleDateString()} → {new Date(renewal.periodEnd).toLocaleDateString()}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        aria-label="Delete renewal record"
+                        onClick={() => removeRenewal(renewal._id)}
+                        className="rounded-lg p-2 text-slate-400 hover:bg-rose-50 hover:text-rose-600"
+                      >
+                        <Trash2 size={15} />
+                      </button>
                     </div>
-                    <div>
-                      <p className="text-xs font-bold text-slate-800">{r.title}</p>
-                      <p className="text-[11px] text-slate-400">{r.period}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))
+                ) : (
+                  <p className="text-xs text-slate-400">No renewal records yet.</p>
+                )}
               </div>
             </div>
           </div>
@@ -363,13 +472,60 @@ function CustomerDetailsContent() {
       </main>
 
       {/* ===== MODALS ===== */}
+      {isEditModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm">
+          <form onSubmit={saveCustomer} className="w-full max-w-md space-y-4 rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl font-bold text-slate-900">Edit customer</h2>
+              <button type="button" onClick={() => setIsEditModalOpen(false)} aria-label="Close edit customer dialog">
+                <X size={20} className="text-slate-400" />
+              </button>
+            </div>
+            <label className="block text-xs font-semibold text-slate-600">
+              Full name
+              <input
+                value={editName}
+                onChange={(event) => setEditName(event.target.value)}
+                minLength={10}
+                required
+                className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm font-normal text-slate-900"
+              />
+            </label>
+            <label className="block text-xs font-semibold text-slate-600">
+              Phone
+              <input
+                value={editPhone}
+                onChange={(event) => setEditPhone(event.target.value)}
+                required
+                className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm font-normal text-slate-900"
+              />
+            </label>
+            <label className="block text-xs font-semibold text-slate-600">
+              Email
+              <input
+                type="email"
+                value={editEmail}
+                onChange={(event) => setEditEmail(event.target.value)}
+                required
+                className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm font-normal text-slate-900"
+              />
+            </label>
+            <div className="flex justify-end gap-3 pt-2">
+              <Button variant="secondary" onClick={() => setIsEditModalOpen(false)}>Cancel</Button>
+              <Button type="submit" disabled={isSavingCustomer}>
+                {isSavingCustomer ? "Saving..." : "Save customer"}
+              </Button>
+            </div>
+          </form>
+        </div>
+      )}
       {isRenewModalOpen && (
         <RenewalModal
           customer={{ ...customer, expires: customer.expiresDate, expiryDate: customer.expiresDate }}
           onClose={() => setIsRenewModalOpen(false)}
-          onConfirm={(months) => {
-            renewCustomer(customer.id, months);
-            setIsRenewModalOpen(false);
+          onConfirm={async (months) => {
+            const renewed = await renewCustomer(customer.id, months);
+            if (renewed) setIsRenewModalOpen(false);
           }}
         />
       )}
@@ -417,10 +573,12 @@ function CustomerDetailsContent() {
               <Button
                 variant="danger"
                 size="md"
-                onClick={() => {
-                  deleteCustomer(customer.id);
-                  setIsDeleteModalOpen(false);
-                  router.push("/customers");
+                onClick={async () => {
+                  const deleted = await deleteCustomer(customer.id);
+                  if (deleted) {
+                    setIsDeleteModalOpen(false);
+                    router.push("/customers");
+                  }
                 }}
                 className="px-6 bg-[#e11d48] hover:bg-[#be123c]"
               >

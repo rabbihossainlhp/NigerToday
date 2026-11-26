@@ -78,7 +78,10 @@ const deleteCustomer = async (customerId) => {
       throw new ApiError(httpStatus.BAD_REQUEST, "Invalid customer ID format!");
    }
 
-   await Customer.findByIdAndDelete(customerId);
+   await Promise.all([
+      Customer.findByIdAndDelete(customerId),
+      Renewal.deleteMany({ customerId }),
+   ]);
 
    return null;
 }

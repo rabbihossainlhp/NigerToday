@@ -60,19 +60,9 @@ const getCustomerList = catchAsync(async (req, res) => {
     {skip,limit:requestedLimit}
   );
 
-  if (!customers || customers.result.length === 0) {
-    res.status(httpStatus.NOT_FOUND).json(
-      response({
-        message: "No customers found yet",
-        status: "OK",
-        statusCode: httpStatus.NOT_FOUND,
-      })
-    )
-  }
-
   res.status(httpStatus.OK).json(
     response({
-      message: "Customers data fetched",
+      message: customers.result.length ? "Customers data fetched" : "No customers found",
       status: "OK",
       statusCode: httpStatus.OK,
       data: customers.result

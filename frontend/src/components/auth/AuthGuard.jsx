@@ -2,11 +2,13 @@
 
 import { useEffect, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
+import {
+  AUTH_CHANGED_EVENT,
+  AUTH_STORAGE_KEY,
+  getAuth,
+} from "@/services/apiClient";
 
-
-
-export const AUTH_STORAGE_KEY = "nigertoday_auth";
-export const AUTH_CHANGED_EVENT = "nigertoday-auth-changed";
+export { AUTH_CHANGED_EVENT, AUTH_STORAGE_KEY };
 
 function subscribeToAuthChanges(callback) {
   window.addEventListener("storage", callback);
@@ -19,12 +21,7 @@ function subscribeToAuthChanges(callback) {
 }
 
 function getAuthSnapshot() {
-  try {
-    const auth = JSON.parse(localStorage.getItem(AUTH_STORAGE_KEY));
-    return auth?.loggedIn === true;
-  } catch {
-    return false;
-  }
+  return Boolean(getAuth()?.accessToken);
 }
 
 export default function AuthGuard({ children }) {

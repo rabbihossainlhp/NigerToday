@@ -1,121 +1,183 @@
 "use client";
-import { createContext, useContext, useState } from "react";
-import { initialCustomers } from "@/data/customers";
+
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { customerService } from "@/services/customerService";
+import { renewalService } from "@/services/renewalService";
+import { AUTH_CHANGED_EVENT, getAuth } from "@/services/apiClient";
 import Toast from "@/components/ui/Toast";
 
-const CustomerContext = createContext();
+const CustomerContext = createContext(null);
 
 export function CustomerProvider({ children }) {
-  const [customers, setCustomers] = useState(initialCustomers);
-  const [toast, setToast] = useState(null); // { title, message, type: 'success' | 'error' }
+  const [customers, setCustomers] = useState([]);
+  const [toast, setToast] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const showToast = (title, message, type = "success") => {
+  const showToast = useCallback((title, message, type = "success") => {
     setToast({ title, message, type });
-  };
+  }, []);
 
-  const clearToast = () => setToast(null);
+  const clearToast = useCallback(() => setToast(null), []);
 
-  const addCustomer = (newCust) => {
-    if (!newCust.name?.trim()) {
+  const refreshCustomers = useCallback(async () => {
+    const records = await customerService.list();
+    setCustomers(records);
+    return records;
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    const loadCustomers = async () => {
+      setLoading(true);
+      if (!getAuth()?.accessToken) {
+        if (active) {
+          setCustomers([]);
+          setLoading(false);
+        }
+        return;
+      }
+
+      try {
+        const records = await customerService.list();
+        if (active) setCustomers(records);
+      } catch (error) {
+        if (active) showToast("Could not load customers", error.message, "error");
+      } finally {
+        if (active) setLoading(false);
+      }
+    };
+
+    loadCustomers();
+    window.addEventListener(AUTH_CHANGED_EVENT, loadCustomers);
+    return () => {
+      active = false;
+      window.removeEventListener(AUTH_CHANGED_EVENT, loadCustomers);
+    };
+  }, [showToast]);
+
+  const addCustomer = async (customer) => {
+    if (!customer.name?.trim() || !customer.email?.trim() || !customer.phone?.trim()) {
       showToast("Could not save customer", "Please check the details and try again.", "error");
       return false;
     }
-    setCustomers((prev) => [newCust, ...prev]);
-    showToast("Customer added", `${newCust.name} was successfully added.`, "success");
-    return true;
+
+    let created;
+    try {
+      created = await customerService.create(customer);
+    } catch (error) {
+      showToast("Could not save customer", error.message, "error");
+      return false;
+    }
+
+    try {
+      await renewalService.create({
+        customerId: created.id,
+        periodStart: customer.periodStart,
+        durationMonths: Number(customer.duration),
+        type: "initial",
+      });
+    } catch (error) {
+      try {
+        await refreshCustomers();
+      } catch (refreshError) {
+        showToast(
+          "Customer created",
+          `The initial subscription could not be saved or the customer list could not be reloaded: ${refreshError.message}`,
+          "error",
+        );
+        return true;
+      }
+      showToast(
+        "Customer saved without a subscription",
+        `The customer was created, but the initial subscription could not be saved: ${error.message}`,
+        "error",
+      );
+      return true;
+    }
+
+    try {
+      await refreshCustomers();
+      showToast("Customer added", `${created.name} was successfully added.`, "success");
+      return true;
+    } catch (error) {
+      showToast(
+        "Customer and subscription saved",
+        `The customer list could not be reloaded: ${error.message}`,
+        "error",
+      );
+      return true;
+    }
   };
 
-  const deleteCustomer = (id) => {
-    setCustomers((prev) => prev.filter((c) => c.id !== id));
-    showToast("Customer deleted", "The customer record has been removed.", "success");
+  const deleteCustomer = async (id) => {
+    try {
+      await customerService.remove(id);
+      setCustomers((previous) => previous.filter((customer) => customer.id !== id));
+      showToast("Customer deleted", "The customer record has been removed.", "success");
+      return true;
+    } catch (error) {
+      showToast("Could not delete customer", error.message, "error");
+      return false;
+    }
   };
 
-  const renewCustomer = (id, additionalMonths) => {
+  const renewCustomer = async (id, additionalMonths) => {
     const customer = customers.find((item) => item.id === id);
     if (!customer) {
       showToast("Could not renew subscription", "The customer could not be found.", "error");
-      return;
+      return false;
     }
 
-    const expiryYear =
-      customer.expires?.match?.(/\d{4}/)?.[0] ||
-      customer.startDate?.match?.(/\d{4}/)?.[0] ||
-      new Date().getFullYear();
-    const rawExpiry = customer.expiryDate || `${customer.expires}, ${expiryYear}`;
-    const currentExpiry = /^\d{4}-\d{2}-\d{2}$/.test(rawExpiry)
-      ? new Date(
-          Number(rawExpiry.slice(0, 4)),
-          Number(rawExpiry.slice(5, 7)) - 1,
-          Number(rawExpiry.slice(8, 10)),
-        )
-      : new Date(rawExpiry);
-    if (Number.isNaN(currentExpiry.getTime())) {
-      showToast("Could not renew subscription", "The current expiry date is invalid.", "error");
-      return;
-    }
-
-    currentExpiry.setMonth(currentExpiry.getMonth() + additionalMonths);
-    const newExpiresStr = [
-      currentExpiry.getFullYear(),
-      String(currentExpiry.getMonth() + 1).padStart(2, "0"),
-      String(currentExpiry.getDate()).padStart(2, "0"),
-    ].join("-");
-    const newExpiryFormatted = currentExpiry.toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    });
+    const currentExpiry = customer.expiryDate
+      ? new Date(`${customer.expiryDate}T00:00:00`)
+      : new Date();
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    currentExpiry.setHours(0, 0, 0, 0);
-    const daysLeft = Math.ceil((currentExpiry - today) / (1000 * 60 * 60 * 24));
-    const status = daysLeft <= 0 ? "Expired" : daysLeft <= 10 ? "Expiring soon" : "Active";
-    const badge =
-      status === "Active"
-        ? "Active"
-        : status === "Expired"
-          ? `${Math.abs(daysLeft)} days ago`
-          : `${daysLeft} days left`;
-    const category =
-      daysLeft <= 3 ? "1-3" : daysLeft <= 7 ? "4-7" : daysLeft <= 10 ? "8-10" : undefined;
+    if (Number.isNaN(currentExpiry.getTime())) {
+      showToast("Could not renew subscription", "The current expiry date is invalid.", "error");
+      return false;
+    }
+    if (currentExpiry < today) currentExpiry.setTime(today.getTime());
 
-    setCustomers((prev) =>
-      prev.map((item) =>
-        item.id === id
-          ? {
-              ...item,
-              expires: newExpiryFormatted,
-              expiryDate: newExpiresStr,
-              daysLeft,
-              status,
-              badge,
-              badgeColor:
-                status === "Expired"
-                  ? "bg-rose-50 text-rose-700 border border-rose-200"
-                  : status === "Expiring soon"
-                    ? "bg-amber-100 text-amber-800 border border-amber-200"
-                    : "bg-emerald-50 text-emerald-700 border border-emerald-200",
-              ...(category ? { category } : { category: undefined }),
-              renewals: [
-                {
-                  title: `Renewed for ${additionalMonths} months`,
-                  period: `${item.expires} → ${newExpiryFormatted}`,
-                },
-                ...(item.renewals ?? []),
-              ],
-            }
-          : item,
-      ),
-    );
-    showToast(
-      "Subscription renewed",
-      `${customer.name} - new expiry ${newExpiryFormatted}`,
-      "success",
-    );
+    try {
+      await renewalService.create({
+        customerId: customer.id,
+        periodStart: currentExpiry.toISOString(),
+        durationMonths: Number(additionalMonths),
+        type: "renewal",
+      });
+    } catch (error) {
+      showToast("Could not renew subscription", error.message, "error");
+      return false;
+    }
+
+    try {
+      await refreshCustomers();
+      showToast("Subscription renewed", `${customer.name} was renewed.`, "success");
+    } catch (error) {
+      showToast(
+        "Subscription renewed",
+        `The renewal was saved, but the customer list could not be reloaded: ${error.message}`,
+        "error",
+      );
+    }
+    return true;
   };
 
   return (
-    <CustomerContext.Provider value={{ customers, addCustomer, deleteCustomer, renewCustomer, toast, showToast, clearToast }}>
+    <CustomerContext.Provider
+      value={{
+        customers,
+        loading,
+        refreshCustomers,
+        addCustomer,
+        deleteCustomer,
+        renewCustomer,
+        toast,
+        showToast,
+        clearToast,
+      }}
+    >
       {children}
       <Toast toast={toast} onClose={clearToast} />
     </CustomerContext.Provider>

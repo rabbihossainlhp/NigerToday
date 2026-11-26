@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCustomers } from "@/context/CustomerContext";
-import { AUTH_CHANGED_EVENT, AUTH_STORAGE_KEY } from "@/components/auth/AuthGuard";
 import Button from "@/components/ui/Button";
+import { authService } from "@/services/authService";
 
 const LOGO_SRC = "/upload/bg_logo.png";
 
@@ -93,12 +93,16 @@ export default function Sidebar() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [isMoreMenuOpen]);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     setIsMoreMenuOpen(false);
-    localStorage.removeItem(AUTH_STORAGE_KEY);
-    window.dispatchEvent(new Event(AUTH_CHANGED_EVENT));
-    showToast("Logged out", "You have been logged out successfully.", "success");
-    router.push("/login");
+    try {
+      await authService.logout();
+      showToast("Logged out", "You have been logged out successfully.", "success");
+    } catch (error) {
+      showToast("Logged out locally", error.message, "error");
+    } finally {
+      router.push("/login");
+    }
   };
 
   return (

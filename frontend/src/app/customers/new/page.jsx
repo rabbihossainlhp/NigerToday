@@ -18,6 +18,7 @@ export default function AddCustomerPage() {
   const [startDate, setStartDate] = useState(newCustomerDefaults.startDate);
   const [duration, setDuration] = useState(newCustomerDefaults.duration); // duration in months (3, 6, 12)
   const [today, setToday] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setToday(new Date()), 0);
@@ -56,9 +57,14 @@ export default function AddCustomerPage() {
 
   const daysLeft = calculateDaysLeft(expiryDate);
 
-  const handleAddCustomer = () => {
+  const handleAddCustomer = async () => {
+    if (submitting) return;
     if (!fullName.trim() || !phoneNumber.trim() || !email.trim() || !startDate) {
       showToast("Could not save customer", "Please complete all customer details.", "error");
+      return;
+    }
+    if (fullName.trim().length < 10) {
+      showToast("Could not save customer", "Full name must be at least 10 characters.", "error");
       return;
     }
 
@@ -69,57 +75,19 @@ export default function AddCustomerPage() {
       return;
     }
 
-    const now = new Date();
-    now.setHours(0, 0, 0, 0);
-    expiry.setHours(0, 0, 0, 0);
-    const remainingDays = Math.ceil((expiry - now) / (1000 * 60 * 60 * 24));
-    const status =
-      remainingDays <= 0 ? "Expired" : remainingDays <= 10 ? "Expiring soon" : "Active";
-    const nameParts = fullName.trim().split(/\s+/);
-    const initials = nameParts
-      .slice(0, 2)
-      .map((part) => part[0])
-      .join("")
-      .toUpperCase();
-    const expiresISO = [
-      expiry.getFullYear(),
-      String(expiry.getMonth() + 1).padStart(2, "0"),
-      String(expiry.getDate()).padStart(2, "0"),
-    ].join("-");
-
-    const added = addCustomer({
-      id: globalThis.crypto?.randomUUID?.() ?? `customer-${Date.now()}`,
-      initials,
-      name: fullName.trim(),
-      phone: phoneNumber.trim(),
-      email: email.trim(),
-      startDate: formatDateString(start),
-      duration: Number(duration),
-      expires: formatDateString(expiry),
-      expiryDate: expiresISO,
-      daysLeft: remainingDays,
-      status,
-      badgeColor:
-        status === "Expired"
-          ? "bg-rose-50 text-rose-700 border border-rose-200"
-          : status === "Expiring soon"
-            ? "bg-amber-100 text-amber-800 border border-amber-200"
-            : "bg-emerald-50 text-emerald-700 border border-emerald-200",
-      ...(status === "Expired" ? { expiredOn: formatDateString(expiry) } : {}),
-      badge:
-        status === "Active"
-          ? "Active"
-          : status === "Expired"
-            ? `${Math.abs(remainingDays)} days ago`
-            : `${remainingDays} days left`,
-      ...(remainingDays > 0 && remainingDays <= 10
-        ? {
-            category:
-              remainingDays <= 3 ? "1-3" : remainingDays <= 7 ? "4-7" : "8-10",
-          }
-        : {}),
-    });
-
+    setSubmitting(true);
+    let added = false;
+    try {
+      added = await addCustomer({
+        name: fullName.trim(),
+        phone: phoneNumber.trim(),
+        email: email.trim(),
+        periodStart: start.toISOString(),
+        duration: Number(duration),
+      });
+    } finally {
+      setSubmitting(false);
+    }
     if (added) router.push("/customers");
   };
 
@@ -280,9 +248,9 @@ export default function AddCustomerPage() {
               <Button href="/customers" variant="secondary" size="sm" className="px-5 py-2.5">
                 Cancel
               </Button>
-              <Button size="sm" className="px-5 py-2.5" onClick={handleAddCustomer}>
+              <Button size="sm" className="px-5 py-2.5" onClick={handleAddCustomer} disabled={submitting}>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/></svg>
-                Add Customer
+                {submitting ? "Saving..." : "Add Customer"}
               </Button>
             </div>
           </Panel>

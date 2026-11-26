@@ -12,13 +12,18 @@ export default function RenewalModal({ customer, onClose, onConfirm }) {
     customer.startDate?.match?.(/\d{4}/)?.[0] ||
     new Date().getFullYear();
   const expiryValue = customer.expiryDate || `${customer.expires}, ${expiryYear}`;
-  const expiry = /^\d{4}-\d{2}-\d{2}$/.test(expiryValue)
+  let expiry = /^\d{4}-\d{2}-\d{2}$/.test(expiryValue)
     ? new Date(
         Number(expiryValue.slice(0, 4)),
         Number(expiryValue.slice(5, 7)) - 1,
         Number(expiryValue.slice(8, 10)),
       )
     : new Date(expiryValue);
+  if (Number.isNaN(expiry.getTime())) expiry = new Date();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  expiry.setHours(0, 0, 0, 0);
+  if (expiry < today) expiry = today;
   expiry.setMonth(expiry.getMonth() + months);
   const newExpiry = expiry.toLocaleDateString("en-US", {
     month: "short",

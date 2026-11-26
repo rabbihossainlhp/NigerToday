@@ -148,9 +148,9 @@ export default function ExpiredPage() {
           <RenewalModal 
             customer={selectedCustomer} 
             onClose={() => setModal(null)} 
-            onConfirm={(months) => { 
-              renewCustomer(selectedCustomer.id, months); 
-              setModal(null); 
+            onConfirm={async (months) => {
+              const renewed = await renewCustomer(selectedCustomer.id, months);
+              if (renewed) setModal(null);
             }} 
           />
         )}

@@ -2777,3 +2777,89 @@
     at /home/rabbi/_Dev_Folder/NigerToday/backend/node_modules/express/lib/router/index.js:286:9
 [[31merror[39m] GET / 404 - 84.425 ms - message: This API Not found
 [[32minfo[39m] POST /api/v1/auth/login 200 - 528.188 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3000
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3000
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] OPTIONS /api/v1/auth/login 204 - 8.855 ms
+[[31merror[39m] Error: Incorrect email or password
+    at Object.loginUserWithEmailAndPassword (/home/rabbi/_Dev_Folder/NigerToday/backend/src/services/auth.service.js:12:11)
+    at async /home/rabbi/_Dev_Folder/NigerToday/backend/src/controllers/auth.controller.js:69:16
+[[31merror[39m] POST /api/v1/auth/login 401 - 499.122 ms - message: Incorrect email or password
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] POST /api/v1/auth/forgot-password 200 - 6657.924 ms
+[[32minfo[39m] POST /api/v1/auth/verify-email 200 - 4373.578 ms
+[[32minfo[39m] POST /api/v1/auth/reset-password 200 - 1480.126 ms
+[[32minfo[39m] OPTIONS /api/v1/auth/login 204 - 3.615 ms
+[[32minfo[39m] POST /api/v1/auth/login 200 - 1950.951 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/customers-list?page=1&limit=1000 204 - 1.676 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.545 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.491 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1000 200 - 1375.282 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 200 - 564.981 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 891.309 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.585 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 223.732 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 1924.953 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/create 204 - 0.780 ms
+[[32minfo[39m] POST /api/v1/customer/create 201 - 294.218 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/new 204 - 1.024 ms
+[[32minfo[39m] POST /api/v1/renewals/new 201 - 1390.763 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/customers-list?page=1&limit=1000 204 - 0.813 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1000 200 - 652.885 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/customer/6af90ce1ddaf4545015b6f69 204 - 0.397 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/customer/6af90ce1ddaf4545015b6f69 204 - 0.509 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6af90ce1ddaf4545015b6f69 200 - 146.484 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6af90ce1ddaf4545015b6f69 304 - 159.520 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/new 204 - 1.014 ms
+[[32minfo[39m] POST /api/v1/renewals/new 201 - 428.649 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/customers-list?page=1&limit=1000 204 - 1.972 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1000 200 - 389.514 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/customer/6af90ce1ddaf4545015b6f69 204 - 0.379 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6af90ce1ddaf4545015b6f69 200 - 191.106 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6af90ce1ddaf4545015b6f69 304 - 151.447 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/customer/6afc24324ea47b761603d64e 204 - 0.475 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6afc24324ea47b761603d64e 200 - 243.140 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6afc24324ea47b761603d64e 304 - 245.042 ms
+[[32minfo[39m] OPTIONS /api/v1/users/self/in 204 - 0.452 ms
+[[32minfo[39m] OPTIONS /api/v1/users/self/in 204 - 0.364 ms
+[[32minfo[39m] GET /api/v1/users/self/in 200 - 161.419 ms
+[[32minfo[39m] GET /api/v1/users/self/in 304 - 145.400 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.367 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 200 - 147.793 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 174.826 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/customer/6b0866cb1520fb1f9ebf161c 204 - 0.419 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/customer/6b0866cb1520fb1f9ebf161c 204 - 0.369 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6b0866cb1520fb1f9ebf161c 200 - 209.995 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6b0866cb1520fb1f9ebf161c 304 - 199.915 ms
+[[32minfo[39m] OPTIONS /api/v1/auth/logout 204 - 0.729 ms
+[[32minfo[39m] POST /api/v1/auth/logout 200 - 328.684 ms

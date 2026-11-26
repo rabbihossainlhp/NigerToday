@@ -8,7 +8,7 @@ import RenewalModal from "@/components/ui/RenewalModal";
 import ReminderModal from "@/components/ui/ReminderModal";
 
 export default function CustomersPage() {
-  const { customers, renewCustomer, showToast } = useCustomers();
+  const { customers, loading, renewCustomer, showToast } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [modal, setModal] = useState(null);
   const [activeTab, setActiveTab] = useState("all");
@@ -42,6 +42,13 @@ export default function CustomersPage() {
         <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-100">
           <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
           {daysLeft} days left
+        </span>
+      );
+    }
+    if (c.status === "No subscription") {
+      return (
+        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-600 border border-slate-200">
+          No subscription
         </span>
       );
     }
@@ -96,7 +103,11 @@ export default function CustomersPage() {
         </div>
 
         {/* Empty State */}
-        {customers.length === 0 ? (
+        {loading ? (
+          <div className="rounded-2xl border border-slate-200 bg-white p-12 text-center text-sm text-slate-400">
+            Loading customers...
+          </div>
+        ) : customers.length === 0 ? (
           <div className="bg-white rounded-2xl border border-slate-200 p-12 sm:p-16 flex flex-col items-center justify-center text-center space-y-4 min-h-[400px]">
             <div className="w-14 h-14 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center">
               <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
@@ -247,9 +258,9 @@ export default function CustomersPage() {
         <RenewalModal
           customer={selectedCustomer}
           onClose={() => setModal(null)}
-          onConfirm={(months) => {
-            renewCustomer(selectedCustomer.id, months);
-            setModal(null);
+          onConfirm={async (months) => {
+            const renewed = await renewCustomer(selectedCustomer.id, months);
+            if (renewed) setModal(null);
           }}
         />
       )}
