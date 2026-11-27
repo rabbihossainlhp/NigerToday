@@ -134,4 +134,11 @@ export const customerService = {
   remove(id) {
     return apiRequest(`/customer/${encodeURIComponent(id)}`, { method: "DELETE" });
   },
+
+  sendReminder(id, message) {
+    return apiRequest(`/customer/${encodeURIComponent(id)}/reminder`, {
+      method: "POST",
+      body: { message },
+    });
+  },
 };

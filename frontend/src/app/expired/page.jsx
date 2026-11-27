@@ -14,7 +14,7 @@ import ReminderModal from "@/components/ui/ReminderModal";
 import { RefreshCw, MessageCircle } from "lucide-react";
 
 export default function ExpiredPage() {
-  const { customers, showToast, renewCustomer } = useCustomers();
+  const { customers, showToast, renewCustomer, sendReminder } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [modal, setModal] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -158,6 +158,7 @@ export default function ExpiredPage() {
           <ReminderModal 
             customer={selectedCustomer} 
             onClose={() => setModal(null)} 
+            onSend={(message) => sendReminder(selectedCustomer.id, message)}
             onConfirm={() => { 
               showToast("Reminder ready", `Message copied for ${selectedCustomer.name}.`); 
               setModal(null); 

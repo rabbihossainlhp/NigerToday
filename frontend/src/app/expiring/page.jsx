@@ -14,7 +14,7 @@ import RenewalModal from "@/components/ui/RenewalModal";
 import ReminderModal from "@/components/ui/ReminderModal";
 
 export default function ExpiringSoonPage() {
-  const { customers, showToast, renewCustomer } = useCustomers();
+  const { customers, showToast, renewCustomer, sendReminder } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [modal, setModal] = useState(null);
   const [activeTab, setActiveTab] = useState("all");
@@ -211,6 +211,7 @@ export default function ExpiringSoonPage() {
           <ReminderModal 
             customer={selectedCustomer} 
             onClose={() => setModal(null)} 
+            onSend={(message) => sendReminder(selectedCustomer.id, message)}
             onConfirm={() => { 
               showToast("Reminder ready", `Message copied for ${selectedCustomer.name}.`); 
               setModal(null); 

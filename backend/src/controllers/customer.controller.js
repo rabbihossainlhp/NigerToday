@@ -1,4 +1,5 @@
 const httpStatus = require("http-status");
+const mongoose = require("mongoose");
 const ApiError = require("../utils/ApiError");
 const catchAsync = require("../utils/catchAsync");
 const response = require("../config/response");
@@ -163,6 +164,32 @@ const deleteCustomer = catchAsync(async(req,res)=>{
 
 
 
+const sendReminderToCustomer = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  const { message } = req.body;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    throw new ApiError(httpStatus.BAD_REQUEST, "Invalid customer ID");
+  }
+  if (typeof message !== "string" || !message.trim()) {
+    throw new ApiError(httpStatus.BAD_REQUEST, "Reminder message is required");
+  }
+  if (message.trim().length > 2000) {
+    throw new ApiError(httpStatus.BAD_REQUEST, "Reminder message cannot exceed 2000 characters");
+  }
+
+  await customerService.sendReminderToCustomer(id, message.trim());
+
+  res.status(httpStatus.OK).json(
+    response({
+      message: "Reminder email sent successfully",
+      status: "OK",
+      statusCode: httpStatus.OK,
+      data: {},
+    })
+  );
+});
+
 
 
 module.exports = {
@@ -171,4 +198,5 @@ module.exports = {
   getSingleCustomer,
   updateCustomer,
   deleteCustomer,
+  sendReminderToCustomer,
 };

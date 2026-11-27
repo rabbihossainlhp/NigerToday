@@ -14,7 +14,7 @@ import { renewalService } from "@/services/renewalService";
 import { customerService } from "@/services/customerService";
 
 function CustomerDetailsContent() {
-  const { customers, loading, refreshCustomers, showToast, renewCustomer, deleteCustomer } = useCustomers();
+  const { customers, loading, refreshCustomers, showToast, renewCustomer, deleteCustomer, sendReminder } = useCustomers();
   const routeParams = useParams();
   const router = useRouter();
   const [copiedField, setCopiedField] = useState(null);
@@ -534,6 +534,7 @@ function CustomerDetailsContent() {
         <ReminderModal
           customer={{ ...customer, expires: customer.expiresDate }}
           onClose={() => setIsReminderModalOpen(false)}
+          onSend={(message) => sendReminder(customer.id, message)}
           onConfirm={() => {
             showToast("Reminder ready", `Message copied for ${customer.name}.`);
             setIsReminderModalOpen(false);

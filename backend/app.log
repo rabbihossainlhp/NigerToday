@@ -2977,3 +2977,136 @@
 [[32minfo[39m] Connected to MongoDB
 [[32minfo[39m] Listening to ip http://192.168.0.110:3001
 [[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] OPTIONS /api/v1/customer/customers-list?page=1&limit=1000 204 - 15.337 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/customers-list?page=1&limit=1000 204 - 4.656 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1000 304 - 589.790 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1000 304 - 182.984 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.656 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 154.542 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 178.045 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 4.556 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.682 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 145.106 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 150.196 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/create 204 - 2.295 ms
+[[32minfo[39m] POST /api/v1/customer/create 201 - 346.090 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/new 204 - 1.123 ms
+[[32minfo[39m] POST /api/v1/renewals/new 201 - 287.993 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/customers-list?page=1&limit=1000 204 - 1.447 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1000 200 - 157.615 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/customer/6b09a415913e70241162ee92 204 - 0.765 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/customer/6b09a415913e70241162ee92 204 - 0.438 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6b09a415913e70241162ee92 200 - 145.364 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6b09a415913e70241162ee92 304 - 126.263 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/6b09a415913e70241162ee92/reminder 204 - 0.966 ms
+[[32minfo[39m] POST /api/v1/customer/6b09a415913e70241162ee92/reminder 200 - 4533.945 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.380 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.401 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 200 - 134.778 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 129.461 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/create 204 - 2.652 ms
+[[32minfo[39m] POST /api/v1/customer/create 201 - 183.734 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/new 204 - 0.748 ms
+[[32minfo[39m] POST /api/v1/renewals/new 201 - 268.822 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/customers-list?page=1&limit=1000 204 - 1.193 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1000 200 - 142.591 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/6b09a479913e70241162eeae/reminder 204 - 0.190 ms
+[[32minfo[39m] POST /api/v1/customer/6b09a479913e70241162eeae/reminder 200 - 4470.340 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/customer/6b09a415913e70241162ee92 204 - 0.567 ms
+[[32minfo[39m] OPTIONS /api/v1/renewals/customer/6b09a415913e70241162ee92 204 - 2.159 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6b09a415913e70241162ee92 304 - 139.376 ms
+[[32minfo[39m] GET /api/v1/renewals/customer/6b09a415913e70241162ee92 304 - 151.023 ms

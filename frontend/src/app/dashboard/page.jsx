@@ -14,7 +14,7 @@ import { AlertTriangle, MessageCircle, Search } from "lucide-react";
 import { dashboardService } from "@/services/dashboardService";
 
 export default function DashboardPage() {
-  const { customers, showToast, renewCustomer } = useCustomers();
+  const { customers, showToast, renewCustomer, sendReminder } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [modal, setModal] = useState(null);
   const [remoteStats, setRemoteStats] = useState(null);
@@ -282,6 +282,7 @@ export default function DashboardPage() {
           <ReminderModal 
             customer={selectedCustomer} 
             onClose={() => setModal(null)} 
+            onSend={(message) => sendReminder(selectedCustomer.id, message)}
             onConfirm={() => { 
               showToast("Reminder ready", `Message copied for ${selectedCustomer.name}.`); 
               setModal(null); 

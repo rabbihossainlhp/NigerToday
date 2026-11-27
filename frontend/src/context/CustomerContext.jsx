@@ -121,6 +121,17 @@ export function CustomerProvider({ children }) {
     }
   };
 
+  const sendReminder = async (id, message) => {
+    try {
+      await customerService.sendReminder(id, message);
+      showToast("Reminder sent", "The reminder email was sent successfully.", "success");
+      return true;
+    } catch (error) {
+      showToast("Could not send reminder", error.message, "error");
+      return false;
+    }
+  };
+
   const renewCustomer = async (id, additionalMonths) => {
     const customer = customers.find((item) => item.id === id);
     if (!customer) {
@@ -172,6 +183,7 @@ export function CustomerProvider({ children }) {
         refreshCustomers,
         addCustomer,
         deleteCustomer,
+        sendReminder,
         renewCustomer,
         toast,
         showToast,

@@ -94,11 +94,16 @@ const deleteCustomer = async (customerId) => {
 const sendReminderToCustomer = async(customerId,msgBody) => {
    const customer = await Customer.findById(customerId);
 
-   if(!customer || customer.length === 0){
-      throw new ApiError(httpStatus.NOT_FOUND,"User not found to send reminder")
+   if(!customer){
+      throw new ApiError(httpStatus.NOT_FOUND,"Customer not found");
    }
 
-   return await sendReminderEmail(customer.email,msgBody);
+   if(!customer.email){
+      throw new ApiError(httpStatus.BAD_REQUEST,"Customer does not have an email address");
+   }
+
+   await sendReminderEmail(customer.email,msgBody);
+   return true;
 
 }
 
