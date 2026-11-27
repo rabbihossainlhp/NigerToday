@@ -108,7 +108,7 @@ export default function Sidebar() {
   return (
     <>
       {/* ---------------- DESKTOP SIDEBAR ---------------- */}
-      <aside className="hidden lg:flex w-64 bg-slate-100/70 border-r border-slate-200 flex-col justify-between p-4 shrink-0 min-h-screen">
+      <aside className="hidden lg:flex w-64 bg-slate-100/70 border-r border-slate-200 flex-col justify-between p-4 shrink-0 min-h-0 h-full ">
         <div className="space-y-6">
           <div className="px-2 py-2">
             <div className="relative w-24 h-24">

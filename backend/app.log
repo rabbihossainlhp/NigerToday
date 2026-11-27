@@ -2863,3 +2863,117 @@
 [[32minfo[39m] GET /api/v1/renewals/customer/6b0866cb1520fb1f9ebf161c 304 - 199.915 ms
 [[32minfo[39m] OPTIONS /api/v1/auth/logout 204 - 0.729 ms
 [[32minfo[39m] POST /api/v1/auth/logout 200 - 328.684 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] OPTIONS /api/v1/auth/login 204 - 5.302 ms
+[[32minfo[39m] POST /api/v1/auth/login 200 - 333.253 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/customers-list?page=1&limit=1000 204 - 2.369 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.258 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1000 304 - 868.467 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 503.092 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 103.179 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.343 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 424.375 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 403.751 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/customers-list?page=1&limit=1000 204 - 0.682 ms
+[[32minfo[39m] OPTIONS /api/v1/customer/customers-list?page=1&limit=1000 204 - 0.337 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1000 304 - 271.942 ms
+[[32minfo[39m] GET /api/v1/customer/customers-list?page=1&limit=1000 304 - 196.285 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 0.383 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 5.439 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 172.902 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 130.437 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 1.892 ms
+[[32minfo[39m] OPTIONS /api/v1/dashboard/stats 204 - 3.670 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 185.415 ms
+[[32minfo[39m] GET /api/v1/dashboard/stats 304 - 143.733 ms
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server
+[[32minfo[39m] Connected to MongoDB
+[[32minfo[39m] Listening to ip http://192.168.0.110:3001
+[[32minfo[39m] Connected to email server

@@ -2,6 +2,7 @@ const httpStatus = require("http-status");
 const { Customer,Renewal } = require("../models");
 const ApiError = require("../utils/ApiError");
 const mongoose = require("mongoose");
+const {sendReminderEmail} = require("./email.service")
 
 
 
@@ -90,6 +91,17 @@ const deleteCustomer = async (customerId) => {
 
 
 
+const sendReminderToCustomer = async(customerId,msgBody) => {
+   const customer = await Customer.findById(customerId);
+
+   if(!customer || customer.length === 0){
+      throw new ApiError(httpStatus.NOT_FOUND,"User not found to send reminder")
+   }
+
+   return await sendReminderEmail(customer.email,msgBody);
+
+}
+
 
 module.exports = {
    createCustomer,
@@ -97,4 +109,6 @@ module.exports = {
    findCustomer,
    updateCustomer,
    deleteCustomer,
+   sendReminderToCustomer,
+
 };

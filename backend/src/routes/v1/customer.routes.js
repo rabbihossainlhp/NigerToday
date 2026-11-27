@@ -16,6 +16,9 @@ router.route("/:id")
 
 
 
+router.route("/:id/reminder").post(auth("admin"), customerController.sendReminderToCustomer);
+
+
 
 
 module.exports = router;

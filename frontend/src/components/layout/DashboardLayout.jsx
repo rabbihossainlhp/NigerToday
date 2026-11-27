@@ -5,7 +5,7 @@ import AuthGuard from "@/components/auth/AuthGuard";
 export default function DashboardLayout({ children }) {
   return (
     <AuthGuard>
-      <div className="flex min-h-screen bg-slate-50 text-slate-800">
+      <div className="flex h-dvh overflow-hidden bg-slate-50 text-slate-800">
         <Suspense fallback={<SidebarFallback />}>
           <Sidebar />
         </Suspense>
